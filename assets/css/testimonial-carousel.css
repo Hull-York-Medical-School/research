@@ -1,0 +1,179 @@
+.testimonial-small > ._container {
+  display: flex;
+  flex-flow: column;
+  padding: 50px 20px;
+}
+@media (min-width: 48em) {
+  .testimonial-small > ._container {
+    align-items: center;
+    flex-flow: row;
+    padding: 80px 50px;
+  }
+}
+.testimonial-small > ._container.-blue {
+  background: #1a2a39;
+  color: #fff;
+}
+.testimonial-small > ._container.-blue .btn {
+  color: #fff;
+}
+.testimonial-small > ._container::after, .testimonial-small > ._container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(//www.hyms.ac.uk/assets/developer/generic-templates/images/Quotation-Marks.svg) no-repeat;
+  background-size: 60px;
+  width: 60px;
+  height: 40px;
+  z-index: 2;
+}
+@media (min-width: 48em) {
+  .testimonial-small > ._container::after, .testimonial-small > ._container::before {
+    background-size: 90px;
+    width: 90px;
+    height: 70px;
+  }
+}
+.testimonial-small > ._container::after {
+  bottom: 0;
+  right: 0;
+  top: auto;
+  left: auto;
+  transform: rotate(180deg);
+}
+.testimonial-small > ._container .text-block {
+  flex: 0 1 100%;
+  width: unset;
+}
+@media (min-width: 48em) {
+  .testimonial-small > ._container .text-block {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 47em) {
+  .testimonial-small > ._container .text-block:first-of-type {
+    margin-bottom: 30px;
+  }
+}
+.testimonial-small > ._container .text-block .component-title {
+  margin-bottom: 20px;
+}
+
+.testimonial-carousel > ._container .swiper-wrapper {
+  margin-bottom: 30px;
+  position: relative;
+}
+.testimonial-carousel > ._container .swiper-wrapper > .swiper-slide {
+  display: flex;
+  width: 100%;
+}
+.testimonial-carousel > ._container .swiper-wrapper > .swiper-slide > .testimonial-small > ._container.-blue {
+  background-color: transparent;
+}
+@media (max-width: 47em) {
+  .testimonial-carousel > ._container .controls {
+    display: none;
+  }
+}
+
+.testimonial-carousel.-lilac {
+  background: #615e9b;
+}
+.testimonial-carousel.-pink {
+  background: #ce0037;
+}
+.testimonial-carousel.-yellow {
+  background: #ffbf3f;
+}
+.testimonial-carousel.-purple {
+  background: #4b384c;
+}
+.testimonial-carousel.-maroon {
+  background: #861f41;
+}
+.testimonial-carousel.-orange {
+  background: #d45d00;
+}
+.testimonial-carousel.-blue {
+  background: #1a2a39;
+}
+
+.controls {
+  display: none;
+}
+@media (min-width: 48em) {
+  .controls {
+    align-self: flex-end;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    z-index: 2;
+  }
+}
+.controls > .-prev,
+.controls > .-next {
+  border: 2px solid;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  margin: 0;
+  opacity: 1;
+  top: auto;
+  height: 50px;
+  width: 50px;
+}
+.controls > .-prev .fas,
+.controls > .-next .fas {
+  align-self: center;
+}
+.controls > .-prev.swiper-button-disabled,
+.controls > .-next.swiper-button-disabled {
+  cursor: initial;
+  opacity: 0.5;
+}
+.controls > .-prev {
+  margin-right: 15px;
+}
+.controls.-white > .-prev,
+.controls.-white > .-next {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.controls.-pink > .-prev,
+.controls.-pink > .-next {
+  border: 2px solid #ce0037;
+  color: #ce0037;
+}
+
+.swiper-pagination {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 15px;
+  position: unset;
+}
+@media (min-width: 48em) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+.swiper-pagination.-pink > .swiper-pagination-bullet {
+  background-color: rgba(206, 0, 55, 0.7);
+}
+.swiper-pagination.-pink > .swiper-pagination-bullet-active {
+  background-color: #ce0037;
+}
+.swiper-pagination > .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0;
+  height: 10px;
+  margin: 0;
+  margin-right: 10px;
+  width: 10px;
+}
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}

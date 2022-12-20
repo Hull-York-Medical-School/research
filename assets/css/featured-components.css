@@ -1,0 +1,209 @@
+.featured-title {
+  text-align: center;
+}
+
+.featured-title .tag {
+  display: inline-flex;
+  align-self: center;
+}
+.featured-title .-feature-tag {
+  padding-right: 60px;
+  min-width: 150px;
+}
+.featured-title .-feature-tag::after {
+  content: "";
+  border: 1px solid;
+  height: 0;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 1px);
+}
+.featured-title .component-title {
+  font-weight: 200;
+  margin-bottom: 0;
+}
+.featured-title .component-title strong {
+  display: block;
+}
+.featured-title + .featured-boxes {
+  margin-top: 0;
+}
+
+.featured-block {
+  color: #ffffff;
+  min-height: 600px;
+}
+
+.featured-block > ._container {
+  display: flex;
+  flex-flow: column;
+  gap: 50px;
+}
+@media (min-width: 48em) {
+  .featured-block > ._container {
+    flex-flow: row;
+  }
+}
+.featured-block > ._container .image-container,
+.featured-block > ._container .content {
+  flex-basis: 50%;
+}
+.featured-block > ._container .image-container {
+  align-self: flex-end;
+  height: 575px;
+}
+.featured-block > ._container .image-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.featured-block > ._container .content {
+  order: 1;
+}
+@media (min-width: 48em) {
+  .featured-block > ._container .content {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+}
+.featured-block > ._container .image-container {
+  order: 2;
+}
+
+.featured-block.-pink {
+  background: #ce0037;
+  background: linear-gradient(to bottom, #ce0037 0%, #ce0037 calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-lilac {
+  background: #615e9b;
+  background: linear-gradient(to bottom, #615e9b 0%, #615e9b calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-yellow {
+  background: #ffbf3f;
+  background: linear-gradient(to bottom, #ffbf3f 0%, #ffbf3f calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-purple {
+  background: #4b384c;
+  background: linear-gradient(to bottom, #4b384c 0%, #4b384c calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-maroon {
+  background: #861f41;
+  background: linear-gradient(to bottom, #861f41 0%, #861f41 calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-orange {
+  background: #d45d00;
+  background: linear-gradient(to bottom, #d45d00 0%, #d45d00 calc(100% - 100px), white calc(100% - 100px));
+}
+.featured-block.-blue {
+  background: #1a2a39;
+  background: linear-gradient(to bottom, #1a2a39 0%, #1a2a39 calc(100% - 100px), white calc(100% - 100px));
+}
+
+.featured-boxes > ._container .featured-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px;
+}
+.featured-boxes > ._container .card {
+  background: #1a2a39;
+  border-top: 10px solid #ffbf3f;
+  color: #1a2a39;
+  flex: 1 1 100%;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 24px;
+  line-height: 1.5rem;
+  text-decoration: none;
+}
+@media (min-width: 48em) {
+  .featured-boxes > ._container .card {
+    flex-basis: calc(50% - 30px);
+  }
+}
+@media (min-width: 75em) {
+  .featured-boxes > ._container .card {
+    flex-basis: calc(25% - 50px);
+  }
+}
+.featured-boxes > ._container .card > .link-details {
+  background: #22374b;
+  color: #ffffff;
+  position: relative;
+  text-transform: uppercase;
+  padding: 25px;
+  min-height: 100px;
+  font-weight: 300;
+  flex-grow: 1;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.featured-boxes > ._container .card > .link-details::after {
+  top: calc(50% - 10px);
+}
+.featured-boxes > ._container .card > .link-details strong {
+  font-weight: 800;
+}
+.featured-boxes > ._container .card > .links {
+  background: #1a2a39;
+  min-height: 100px;
+  color: #ffffff;
+  padding: 25px;
+  margin-top: 0;
+}
+.featured-boxes > ._container .card > .links p {
+  margin: 0;
+  line-height: 1.5;
+}
+.featured-boxes > ._container .card > .links p > a::before {
+  display: none;
+}
+.featured-boxes > ._container .card > .links p + p {
+  margin-top: 15px !important;
+}
+.featured-boxes > ._container .card > .links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.featured-boxes > ._container .card > .links a:hover {
+  text-decoration: underline;
+}
+
+.featured-boxes > ._container .-pink .card {
+  border-color: #ce0037;
+}
+.featured-boxes > ._container .-yellow .card {
+  border-color: #ffbf3f;
+}
+.featured-boxes > ._container .-lilac .card {
+  border-color: #615e9b;
+}
+.featured-boxes > ._container .card a[href^="mailto:"],
+.featured-boxes > ._container .card a[href^="tel:"] {
+  display: block;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.featured-boxes > ._container .card a[href^="mailto:"]::before, .featured-boxes > ._container .card a[href^="mailto:"]::before,
+.featured-boxes > ._container .card a[href^="tel:"]::before,
+.featured-boxes > ._container .card a[href^="tel:"]::before {
+  content: "";
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 900;
+  margin-right: 5px;
+  display: inline-block;
+  top: -1px;
+}
+.featured-boxes > ._container .card a[href^="tel:"]::before {
+  content: "\f095";
+  transform: rotate(90deg);
+}
+.featured-boxes > ._container .card a[href^="mailto:"]::before {
+  content: "\f0e0";
+  margin-right: 5px;
+}

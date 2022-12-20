@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#CE0037" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>
+    Links
+  </title>
+
+  <meta name="description" content="Links for pages" />
+  <meta name="Keywords" content="links, pages" />
+
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-96x96.png" sizes="62x62" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-180x180.png" sizes="180x180" type="image/png" />
+
+  <link rel="preconnect" href="//cloud.typography.com/" crossorigin="anonymous" />
+  <link rel="preconnect" href="//use.fontawesome.com/" crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6201216/6221192/css/fonts.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+
+  <link href="./assets/css/layout.css" rel="stylesheet" type="text/css" /> 
+
+    
+    
+  <style>
+    section.test-mq {background: blue;color: white;min-height: 100px;}
+    section.test-mq ._container {background: rgba(0, 0, 0, 0.2);}
+    section.test-mq ._container p {text-align: center;}
+    
+    @media (min-width: 36em) {
+      section.test-mq {background: red;color: initial;}
+    }
+    @media (min-width: 48em) {
+      section.test-mq {background: orange;}
+    }
+    @media (min-width: 62em) {
+      section.test-mq {background: green;}
+    }
+    @media (min-width: 75em) {
+      section.test-mq {background: yellow;}
+    }
+  </style>
+
+  </head>
+  <body>
+    <main>
+      <!-- You write code for this content block in another file -->
+      
+  <section class="test-mq">
+    <div class="_container">
+      <p class="user" style="margin-bottom:20px;"></p>
+      <div style="display:flex;justify-content:center;"> 
+        <p class="screen" style="margin-right:30px;"></p>
+        <p class="cont"></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="_container" style="display:flex;gap:50px;">
+
+      <div class="content -pink" style="flex: 0 1 33.33%;">
+        <div class="tag">
+          <p class="component-tag">Components (categories)</p>
+        </div>
+        <ul style="margin: 33.33%x 0;">
+          <li><a href="./typography.html" target="_blank">Typography</a></li>
+          <li><a href="./carousel-components.html" target="_blank">Carousel components</a></li>
+          <li><a href="./course-components.html" target="_blank">Course components</a></li>
+          <li><a href="./cta-components.html" target="_blank">CTA components *</a></li>
+          <li><a href="./featured-components.html" target="_blank">Featured components</a></li>
+          <li><a href="./general-components.html" target="_blank">General components</a></li>
+          <li><a href="./hero-components.html" target="_blank">Hero components</a></li>
+          <li><a href="./nav-components.html" target="_blank">Navigation components</a></li>
+          <li><a href="./promotional-components.html" target="_blank">Promotional components *</a></li>
+          <li><a href="./stories-components.html" target="_blank">Stories components *</a></li>
+          <li><a href="./video-components.html" target="_blank">Video components *</a></li>
+          <br/>
+          <li><a href="./research-components.html" target="_blank">Research components</a></li>
+        </ul>
+        <br>
+        <p><em> * section complete (styles may need updating) <br> - section part complete</em></p>
+      </div>
+
+      <div class="content -lilac" style="flex: 0 1 33.33%;">
+        <div class="tag">
+          <p class="component-tag">Page examples</p>
+        </div>
+        <ul style="margin: 20px 0;">
+          <li><a href="./standard.html" target="_blank">Standard test</a></li>
+        </ul>
+      </div>
+
+      <div class="content -yellow" style="flex: 0 1 20%;">
+        <div class="tag">
+          <p class="component-tag">Project pages</p>
+        </div>
+        <ul style="margin: 20px 0;">
+          <li><a href="#" target="_blank">Blank project</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+    </main>
+
+         
+  <script>
+    let media = document.querySelector('.test-mq ._container div > .screen')
+    let cont = document.querySelector('.test-mq ._container div > .cont')
+
+    document.querySelector('.test-mq ._container > .user').innerText = navigator.userAgent
+
+    window.onresize = start
+
+    function start() {
+      let size = document.body.clientWidth
+      let contSize = document.querySelector('.test-mq ._container').clientWidth
+      media.innerText = 'Screen size: ' + size
+      cont.innerText = 'Container size: ' + contSize
+    }
+  </script>
+
+  </body>
+</html>
