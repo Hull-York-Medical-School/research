@@ -1,0 +1,30 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Hero" %}
+{% set description = "Hero components" %}
+{% set keywords = "Hero, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/hero/standard-hero.njk" as standard %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  {# <link href="/assets/css/cta-components.css" rel="stylesheet" type="text/css" /> #}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ standard.value() }}
+{% endblock %}

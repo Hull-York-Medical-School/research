@@ -1,0 +1,80 @@
+<header class="header {{page}}" x-data="menu()">
+  <template @load.window="screenSize = window.innerWidth;"></template>
+  <template @resize.window="screenSize = window.innerWidth;"></template>
+  <template x-on:open-menu.window="isMenuOpen = $event.detail.isMenuOpen; freeze();"></template>
+  <template x-on:open-search.window="isSearchOpen = $event.detail.isSearchOpen; freeze();"></template>
+
+  <div class="_container">
+
+    <div class="logo">
+      <a href="/"> 
+        <img alt="Welcome to the Hull York Medical School website" src="https://www.hyms.ac.uk/site-elements/img/logo/hyms-logo.svg" /> 
+      </a>
+    </div>
+
+    {% include "./navigation.njk" %}
+
+  </div>
+</header>
+
+
+<section class="main-menu {{pageMenu}}" x-data="menu()" :class="{ 'active': isMenuOpen || isSearchOpen }">
+  <template @load.window="screenSize = window.innerWidth;"></template>
+  <template @resize.window="screenSize = window.innerWidth;"></template>
+  <template x-on:open-menu.window="isMenuOpen = $event.detail.isMenuOpen; freeze();"></template>
+  <template x-on:open-search.window="isSearchOpen = $event.detail.isSearchOpen; freeze();"></template>
+
+  <template x-if="screenSize > 992 && isSearchOpen === true">
+    <div class="_container">
+      <div class="main-search" :class="{ 'active': isSearchOpen }">
+        <div class="sys_theme-simple sys_searchcontrolstandard-themed">
+            <div class="sys_search-query-control">
+                <label for="SearchQueryControl_SearchTextBox" class="sys_search-label">Search</label>
+                <input name="ctl00$ctl00$PageContent$SearchQueryControl_SearchTextBox" type="text" value="Enter Keywords" id="SearchQueryControl_SearchTextBox" class="sys_searchbox" placeholder="Search Website">
+                <input type="submit" name="ctl00$ctl00$PageContent$SearchQueryControl_SearchButton" value="Search" id="SearchQueryControl_SearchButton" title="Search" class="sys_button sys_searchbutton sys_search-button">
+            </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template x-if="screenSize <= 992">
+    <div class="_container">
+
+      <template x-if="screenSize <= 992 && isSearchOpen === true">
+        <div class="main-search" :class="{ 'active': isSearchOpen }">
+          <div class="sys_theme-simple sys_searchcontrolstandard-themed">
+              <div class="sys_search-query-control">
+                  <label for="SearchQueryControl_SearchTextBox" class="sys_search-label">Search</label>
+                  <input name="ctl00$ctl00$PageContent$SearchQueryControl_SearchTextBox" type="text" value="Enter Keywords" id="SearchQueryControl_SearchTextBox" class="sys_searchbox" placeholder="Search Website">
+                  <input type="submit" name="ctl00$ctl00$PageContent$SearchQueryControl_SearchButton" value="Search" id="SearchQueryControl_SearchButton" title="Search" class="sys_button sys_searchbutton sys_search-button">
+              </div>
+          </div>
+        </div>
+      </template>
+
+      <template x-if="screenSize <= 992 && isMenuOpen === true">
+        <ul class="sub-menu" :class="{ 'active': isMenuOpen }">
+          <li class="desktop-only">
+              <a title="About" href="/about/">About</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Courses" href="/courses/">Courses</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Research" href="/research/">Research</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Work with us" href="/work-with-us/">Work with us</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Contact" href="/contact/">Contact</a>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </template>
+</section>
+
+
+  

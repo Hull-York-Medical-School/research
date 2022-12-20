@@ -1,0 +1,42 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Promotional" %}
+{% set description = "Promotional components" %}
+{% set keywords = "Promotional, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/promotional/cross-links.njk" as cross %}
+{% import "partials/components/promotional/newsletter-panel.njk" as newsletter %}
+{% import "partials/components/promotional/open-days-panel.njk" as open %}
+{% import "partials/components/promotional/promo-panel.njk" as promo %}
+{% import "partials/components/promotional/promo-with-image-panel.njk" as image %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  {# <link href="/assets/css/cta-components.css" rel="stylesheet" type="text/css" /> #}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ cross.value() }}
+
+  {{ newsletter.value() }}
+
+  {{ open.value() }}
+
+  {{ promo.value() }}
+
+  {{ image.value() }}
+{% endblock %}

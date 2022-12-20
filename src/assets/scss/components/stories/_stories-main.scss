@@ -1,0 +1,276 @@
+.main-stories {
+  & {
+    background: $darkblue;
+    position: relative;
+
+    @include respond-above(sm) {
+      background: linear-gradient(
+        to bottom,
+        rgba($darkblue, 1) 0%,
+        rgba($darkblue, 1) calc(100% - 90px),
+        rgba($white, 1) calc(100% - 90px)
+      );
+      height: 900px;
+    }
+  }
+}
+
+.main-stories {
+  .image-container {
+    height: 350px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+
+    @include respond-above(sm) {
+      height: calc(100% - 90px);
+      width: 70%;
+    }
+    img {
+      object-position: top;
+      z-index: 0;
+      @include respond-above(sm) {
+        object-position: left;
+      }
+    }
+    .overlay {
+      background: transparent linear-gradient(180deg, #00000000 40%, #192a38 100%) 0% 0% no-repeat padding-box;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1;
+
+      @include respond-above(sm) {
+        background: transparent linear-gradient(270deg, #00000000 40%, #192a38 100%) 0% 0% no-repeat padding-box;
+      }
+    }
+  }
+
+  ._container {
+    & {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .stories-tag {
+      text-transform: uppercase;
+      strong {
+        font-weight: 800;
+      }
+      @include respond-above(sm) {
+        margin: {
+          bottom: 80px;
+          top: 50px;
+        }
+      }
+    }
+
+    .entry {
+      .btn {
+        color: $white;
+      }
+    }
+    .text-block {
+      align-self: flex-start;
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 0;
+      width: 100%;
+      z-index: 1;
+
+      @include respond-above(sm) {
+        padding: 0 30px;
+      }
+
+      blockquote {
+        font-style: italic;
+        @include line-height(26);
+        margin: {
+          top: 40px;
+          bottom: 40px;
+        }
+        order: 2;
+        padding-left: 10px;
+        position: relative;
+        width: 100%;
+
+        @include respond-above(sm) {
+          @include line-height(30);
+          margin: {
+            bottom: 80px;
+            top: 0;
+          }
+          max-width: 485px;
+          order: 1;
+          padding-left: 40px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -10px;
+          top: -30px;
+          background: url('//www.hyms.ac.uk/assets/developer/generic-templates/images/Quotation-Marks.svg')
+            no-repeat;
+          background-size: 80px;
+          width: 140px;
+          height: 110px;
+          @include respond-above(sm) {
+            top: -60px;
+            background-size: 140px;
+          }
+        }
+      }
+
+      > .story-info {
+        flex-flow: column;
+        margin-top: 140px;
+        order: 1;
+
+        @include respond-above(sm) {
+          flex-flow: row;
+          margin: 0;
+        }
+
+        &:hover {
+          .play {
+            color: $white;
+            &::after {
+              height: 45px;
+              width: 45px;
+              @include respond-above(sm) {
+                height: 90px;
+                width: 90px;
+              }
+            }
+          }
+        }
+
+        .details {
+          color: $white;
+          span {
+            @include font-size(18);
+            display: block;
+            margin-top: 5px;
+          }
+          p {
+            @include font-size(30);
+            @include line-height(36);
+            text-shadow: 0 3px 6px #00000029;
+            @include respond-above(sm) {
+              @include font-size(50);
+              @include line-height(56);
+              margin-bottom: 20px;
+            }
+          }
+        }
+
+        .play {
+          width: 45px;
+          height: 45px;
+          margin-bottom: 15px;
+          margin-right: 15px;
+          @include respond-above(sm) {
+            width: 90px;
+            height: 90px;
+          }
+          &::before {
+            @include font-size(20);
+            @include respond-above(sm) {
+              @include font-size(34);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .secondary-stories {
+    display: none;
+
+    @include respond-above(sm) {
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .story-cards {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      margin: 0 15px;
+      overflow: hidden;
+      position: relative;
+
+      @include respond-above(md) {
+        width: 235px;
+        height: 345px;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparent linear-gradient(180deg, #00000000 0%, #192a38 100%);
+        z-index: 0;
+      }
+
+      &:hover {
+        .story-info {
+          color: $white;
+          .play {
+            color: $white;
+            &::after {
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+
+      .story-info {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        padding: 25px;
+        flex-flow: column;
+
+        .play {
+          width: 40px;
+          height: 40px;
+          margin-bottom: 15px;
+          &::before {
+            @include font-size(15);
+            top: calc(50% - 8px);
+            left: calc(50% - 6px);
+          }
+        }
+
+        .details {
+          display: block;
+          text-transform: uppercase;
+          color: $white;
+          span {
+            @include font-size(10);
+            @include line-height(10);
+            display: block;
+            margin-bottom: 5px;
+          }
+          p {
+            @include font-size(18);
+            @include line-height(20);
+          }
+        }
+      }
+    }
+  }
+}

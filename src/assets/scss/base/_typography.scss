@@ -1,0 +1,262 @@
+/* purgecss start ignore */
+
+body {
+  @include font-size(18);
+  font-family: $font;
+  color: $darkblue;
+  font-weight: 400;
+
+  &.freeze {
+    overflow: hidden;
+  }
+}
+
+.home-title {
+  @include font-size(50);
+  @include line-height(60);
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include respond-above(sm) {
+    @include font-size(160);
+    @include line-height(170);
+  }
+}
+
+.heading-title {
+  font-size: clamp(2.5rem, 10vw, 5.5rem);
+  line-height: clamp(2.8125rem, 10vw, 6.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.component-title {
+  @include font-size(35);
+  @include line-height(39);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  strong {
+    font: {
+      weight: 800;
+    }
+  }
+
+  @include respond-above(sm) {
+    @include font-size(45);
+    @include line-height(49);
+  }
+}
+
+.-lilac .component-title strong {
+  color: $lilac;
+}
+
+.-pink .component-title strong {
+  color: $pink;
+}
+
+.-yellow .component-title strong {
+  color: $yellow;
+}
+.-maroon .component-title strong {
+  color: $maroon;
+}
+
+.-orange .component-title strong {
+  color: $orange;
+}
+
+.-purple .component-title strong {
+  color: $purple;
+}
+
+.-blue a:not(.btn) {
+  color: $white;
+}
+
+.component-tag {
+  @include font-size(14);
+  @include line-height(14);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.body-copy {
+  @include font-size(18);
+  @include line-height(30);
+  font-weight: 700;
+}
+
+.course-title {
+  @include font-size(30);
+  @include line-height(32);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  strong {
+    font: {
+      weight: 800;
+    }
+  }
+}
+
+.course-body {
+  @include font-size(16);
+  @include line-height(28);
+  font-weight: 700;
+  margin-bottom: 25px;
+  strong {
+    font: {
+      weight: 800;
+    }
+  }
+}
+
+// .heading-1 {
+//   @include font-size(70);
+//   transition: font-size 500ms ease-in-out;
+//   @include bp(tablet) {
+//     font-size: 4vw;
+//     line-height: calc(4vw + 5px);
+//     transition: font-size 500ms ease-in-out;
+//   }
+//   @include bp(phone) {
+//     @include font-size(30);
+//     transition: font-size 500ms ease-in-out;
+//   }
+// }
+
+h2,
+.heading-2 {
+  font-size: clamp(2.1875rem, 10vw, 2.5rem);
+  line-height: clamp(2.5625rem, 10vw, 2.875rem);
+  margin-bottom: 20px;
+  strong {
+    font-weight: 600;
+  }
+}
+
+h3,
+.heading-3 {
+  font-size: clamp(1.625rem, 10vw, 1.875rem);
+  line-height: clamp(1.875rem, 10vw, 2.25rem);
+  margin-bottom: 20px;
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
+
+h4,
+.heading-4 {
+  font-size: clamp(1.5625rem, 10vw, 1.75rem);
+  line-height: clamp(1.9375rem, 10vw, 2.125rem);
+  margin-bottom: 20px;
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
+
+h5,
+.heading-5 {
+  font-size: clamp(1.25rem, 10vw, 1.5rem);
+  line-height: clamp(1.625rem, 10vw, 1.875rem);
+  margin-bottom: 20px;
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
+
+h6,
+.heading-6 {
+  font-size: clamp(0.9375rem, 10vw, 1.25rem);
+  line-height: clamp(1.3125rem, 10vw, 1.625rem);
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
+
+.heading {
+  &-1,
+  &-2,
+  &-3,
+  &-4,
+  &-5 {
+    &.-yellow {
+      color: $yellow;
+    }
+    &.-pink {
+      color: $pink;
+    }
+    &.-lilac {
+      color: $lilac;
+    }
+    &.-darkblue {
+      color: $darkblue;
+    }
+    &.-white {
+      color: $white;
+    }
+  }
+}
+
+p,
+ul,
+ol {
+  @include font-size(18);
+  @include line-height(30);
+  font-weight: 200;
+}
+
+ul,
+ol {
+  padding: 0;
+  padding-left: 20px;
+
+  li {
+    margin: 0;
+  }
+}
+
+p {
+  margin-bottom: 18px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  strong {
+    font: {
+      weight: 800;
+    }
+  }
+  & + ul,
+  & + ol {
+    margin-top: 18px;
+  }
+}
+a {
+  color: $pink;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+sub,
+sup {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.-bold {
+  font-weight: 800;
+}
+
+.-italic {
+  font-style: italic;
+}
+
+/* purgecss end ignore */

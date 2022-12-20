@@ -1,0 +1,33 @@
+{% set content="<p>We know it is important to get the right work-life balance, so our programmes provide a flexible way for you to study around your other commitments.</p><p>You can study short courses, individual course modules or a full Masters degree.</p><p>Part-time options are available on all our postgraduate degrees, with some programmes also offering distance learning.</p>" %}
+{% set image="https://images.unsplash.com/photo-1609604106834-beaa020604b0?crop=entropy&cs=srgb&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=85" %}
+{% set alt="Drone in someone's hand" %}
+
+
+{% macro value(background, colour, tag, heading) %}
+
+<section class="featured-block {{ background }}">
+  <div class="_container {{ colour }}">
+    <div class="image-container" role="presentation">
+      <picture>
+        <source data-srcset="{{ image }}&fm=webp&w=400&h=450" alt="" type="image/webp">
+        <img class="lazy" loading="lazy" src="{{ image }}&fm=jpg&w=8&h=8" data-src="{{ image }}&fm=jpg&w=400&h=450" alt="{{ alt }}">
+      </picture>
+    </div>
+    <div class="content">
+
+      <div class="tag">
+        <p class="component-tag">
+          {{ tag }}
+        </p>
+      </div>
+      
+      <h2 class="component-title">
+        {{ heading | safe}}
+      </h2>
+      
+      {{ content | safe}}
+    </div>
+  </div>
+</section>
+
+{% endmacro %}

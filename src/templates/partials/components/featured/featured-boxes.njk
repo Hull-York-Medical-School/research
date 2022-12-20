@@ -1,0 +1,38 @@
+{% set boxes=[
+    {
+      "title": "Set of <strong>links</strong> in here",
+      "content": "<p>Yo! p tags here</p><ul><li>Item 1</li></ul>"
+    },
+    {
+      "title": "Set of <strong>links</strong> in here",
+      "content": "<p>Yo! p tags here</p><ul><li>Item 1</li></ul>"
+    },
+    {
+      "title": "Set of <strong>links</strong> in here",
+      "content": "<p>Yo! p tags here</p><ul><li>Item 1</li></ul>"
+    }
+  ] 
+%}
+
+{% macro value(colour) %}
+  <section class="featured-boxes">
+    <div class="_container">
+
+      <div class="featured-container {{ colour }}">
+
+        {% for box in boxes  %}
+          <div class="card">
+            <div class="link-details">
+            {{ box.title | safe }}
+            </div>
+            <div class="links">
+            {{ box.content | safe }}
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+      
+    </div>
+  </section>
+{% endmacro %}

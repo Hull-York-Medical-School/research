@@ -1,0 +1,109 @@
+.featured-block {
+  color: $white;
+  min-height: 600px;
+}
+
+.featured-block > ._container {
+  display: flex;
+  flex-flow: column;
+  gap: 50px;
+
+  @include respond-above(sm) {
+    flex-flow: row;
+  }
+
+  .image-container,
+  .content {
+    flex-basis: 50%;
+  }
+
+  .image-container {
+    align-self: flex-end;
+    height: 575px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    order: 1;
+
+    @include respond-above(sm) {
+      height: 100%;
+      margin-bottom: 100px;
+    }
+  }
+
+  .image-container {
+    order: 2;
+  }
+}
+
+// BACKGROUND COLOURS
+.featured-block {
+  &.-pink {
+    background: $pink;
+    background: linear-gradient(
+      to bottom,
+      rgba($pink, 1) 0%,
+      rgba($pink, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-lilac {
+    background: $lilac;
+    background: linear-gradient(
+      to bottom,
+      rgba($lilac, 1) 0%,
+      rgba($lilac, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-yellow {
+    background: $yellow;
+    background: linear-gradient(
+      to bottom,
+      rgba($yellow, 1) 0%,
+      rgba($yellow, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-purple {
+    background: $purple;
+    background: linear-gradient(
+      to bottom,
+      rgba($purple, 1) 0%,
+      rgba($purple, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-maroon {
+    background: $maroon;
+    background: linear-gradient(
+      to bottom,
+      rgba($maroon, 1) 0%,
+      rgba($maroon, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-orange {
+    background: $orange;
+    background: linear-gradient(
+      to bottom,
+      rgba($orange, 1) 0%,
+      rgba($orange, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+  &.-blue {
+    background: $darkblue;
+    background: linear-gradient(
+      to bottom,
+      rgba($darkblue, 1) 0%,
+      rgba($darkblue, 1) calc(100% - 100px),
+      rgba($white, 1) calc(100% - 100px)
+    );
+  }
+}

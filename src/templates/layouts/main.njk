@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "partials/includes/meta.njk" %}
+
+    {# <link href="assets/css/common.min.css" rel="stylesheet" type="text/css" /> #}
+    {% block styles %}{% endblock %}
+  
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body>
+    {% include "partials/includes/header.njk" %}
+
+    <main>
+      <!-- You write code for this content block in another file -->
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/includes/footer.njk" %}
+
+    <script src="/assets/js/layout.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

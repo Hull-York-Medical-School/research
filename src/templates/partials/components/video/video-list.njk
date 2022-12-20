@@ -1,0 +1,87 @@
+{% set videos=[
+    {
+      "title": "Postgraduate Programmes",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Drone in someone's hand"
+    },
+    {
+      "title": "Open Events And Fairs",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Taking a picture of a cliff"
+    },
+    {
+      "title": "Funding",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Slow exposure of car lights through a red archway"
+    },
+    {
+      "title": "Funding",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Slow exposure of car lights through a red archway"
+    },
+    {
+      "title": "Open Events And Fairs",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Taking a picture of a cliff"
+    },
+    {
+      "title": "Postgraduate Programmes",
+      "short": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab.",
+      "link": "https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1",
+      "image": "//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg",
+      "alt": "Drone in someone's hand"
+    }
+  ] 
+%}
+
+{% macro value(heading, tag, colour) %}
+<section class="video-list">
+    <div class="_container {{ colour }}">
+
+      <div class="tag">
+        <p class="component-tag">
+          {{ tag }}
+        </p>
+      </div>
+      
+      <h2 class="component-title">
+        {{ heading }}
+      </h2>
+
+      <div class="list-container">
+      {% for video in videos %}
+        <div class="card">
+          <div class="details">
+            <p><strong>{{video.title}}</strong></p>
+            <p>{{video.short}}</p>
+          </div>
+          <a class="video-cards gallery" href="{{video.link}}">
+            <div class="overlay"></div>
+            <picture>
+              <source data-srcset="{{ video.image }}?f=webp" alt="" type="image/webp">
+              <img class="lazy" loading="lazy" src="{{ video.image }}?w=8&h=8" data-src="{{ video.image }}" alt="{{ video.alt }}">
+            </picture>
+
+            <div class="story-info">
+              <div class="play"></div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      </div>
+
+  </div>
+</section>
+
+
+{% endmacro %}

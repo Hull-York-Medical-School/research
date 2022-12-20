@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "partials/includes/meta.njk" %}
+
+    {# <link href="assets/css/common.min.css" rel="stylesheet" type="text/css" /> #}
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    <main>
+      <!-- You write code for this content block in another file -->
+      {% block content %}{% endblock %}
+    </main>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

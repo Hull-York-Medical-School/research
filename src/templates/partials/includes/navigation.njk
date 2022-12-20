@@ -1,0 +1,52 @@
+<nav aria-label="Main">
+
+  <template x-if="screenSize > 992">
+    <ul>
+      <li>
+        <a title="About" href="/about">About</a>
+      </li>
+      <li>
+        <a title="Courses" href="/courses">Courses</a>
+      </li>
+      <li>
+        <a title="Research" href="/research">Research</a>
+      </li>
+      <li>
+        <a title="Work with us" href="/work-with-us">Work with us</a>
+      </li>
+      <li>
+        <a title="Contact" href="/contact">Contact</a>
+      </li>
+      <li class="search">
+        <button 
+          aria-label="Site search"
+          @click="!isSearchOpen, isMenuOpen = false, $dispatch('open-search',{isSearchOpen: !isSearchOpen}), $dispatch('open-menu',{isMenuOpen: false})"
+        > 
+          <i class="fa fa-search" aria-hidden="true">&nbsp;</i> 
+        </button>
+      </li>
+    </ul>
+  </template>
+
+  <template x-if="screenSize <= 992">
+    <ul>
+      <li class="search">
+        <button 
+          aria-label="Site search"
+          @click="!isSearchOpen, isMenuOpen = false, $dispatch('open-search',{isSearchOpen: !isSearchOpen}), $dispatch('open-menu',{isMenuOpen: false})"
+        > 
+          <i class="fa fa-search" aria-hidden="true">&nbsp;</i> 
+        </button>
+      </li>
+        <li class="menu">
+          <button 
+            aria-label="Main menu"
+            @click.prevent="!isMenuOpen, searchOpen = false, $dispatch('open-menu',{isMenuOpen: !isMenuOpen}), $dispatch('open-search',{isSearchOpen: false})"
+          >
+            Menu <i class="fa fa-bars" aria-hidden="true">&nbsp;</i> 
+          </button>
+        </li>
+
+    </ul>
+  </template>
+</nav>

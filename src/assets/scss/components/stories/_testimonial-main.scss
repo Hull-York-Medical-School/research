@@ -1,0 +1,162 @@
+.testimonial-main {
+  background: $darkblue;
+  min-height: 600px;
+  position: relative;
+}
+// @media (max-width: 670px) {
+//   .testimonial-main {
+//     // background: #1a2a39;
+//     // height: auto;
+//   }
+// }
+
+.testimonial-main {
+  .image-container {
+    height: 50%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+
+    @include respond-above(sm) {
+      height: 100%;
+      width: 50%;
+    }
+
+    img {
+      display: flex;
+      object-position: top;
+
+      @include respond-above(sm) {
+        object-position: left;
+      }
+    }
+
+    .overlay {
+      background: transparent linear-gradient(180deg, #00000000 60%, #192a38 95%) 0 0 no-repeat padding-box;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 1;
+
+      @include respond-above(sm) {
+        background: transparent linear-gradient(270deg, #00000000 60%, #192a38 95%) 0 0 no-repeat padding-box;
+      }
+    }
+  }
+
+  ._container {
+    height: 100%;
+    color: #fff;
+
+    .text-block {
+      padding: 50px 0;
+      display: flex;
+      flex-flow: column nowrap;
+      width: 100%;
+
+      @include respond-above(sm) {
+        padding: 100px 30px;
+      }
+    }
+
+    .stories-tag {
+      margin-bottom: 200px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      text-transform: uppercase;
+      strong {
+        font-weight: 800;
+      }
+
+      @include respond-above(sm) {
+        margin-bottom: 0;
+      }
+    }
+
+    blockquote {
+      line-height: 30px;
+      margin: {
+        top: 40px;
+        bottom: 40px;
+      }
+      order: 2;
+      padding-left: 10px;
+      position: relative;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      width: 100%;
+
+      font-style: italic;
+
+      @include respond-above(sm) {
+        padding-left: 40px;
+        max-width: 485px;
+        margin: 80px 0;
+        order: 1;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: url(//www.hyms.ac.uk/assets/developer/generic-templates/images/Quotation-Marks.svg) no-repeat;
+        width: 140px;
+        height: 110px;
+        background-size: 80px;
+        top: -20%;
+
+        @include respond-above(sm) {
+          background-size: 140px;
+          top: -66px;
+        }
+      }
+    }
+    .details {
+      color: #fff;
+      order: 1;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+      @include respond-above(sm) {
+        order: 2;
+      }
+
+      span {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 5px;
+
+        @include respond-above(sm) {
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        font-weight: 700;
+
+        font-size: 30px;
+        line-height: 36px;
+        margin-bottom: 20px;
+
+        @include respond-above(sm) {
+          font-size: 50px;
+          line-height: 56px;
+        }
+      }
+    }
+  }
+}
+
+// DON'T KNOW WHAT THIS IS??? FIND OUT!!!!
+// .testimonial-main ._container .entry {
+//   position: absolute;
+//   bottom: 170px;
+// }
+// .testimonial-main ._container .entry .btn {
+//   color: #fff;
+// }
+// @media (max-width: 670px) {
+//   .testimonial-main ._container .entry {
+//     bottom: 50px;
+//   }
+// }

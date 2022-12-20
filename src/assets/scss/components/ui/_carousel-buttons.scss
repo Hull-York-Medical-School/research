@@ -1,0 +1,90 @@
+.controls {
+  & {
+    display: none;
+
+    @include respond-above(sm) {
+      align-self: flex-end;
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+      z-index: 2;
+    }
+  }
+  > .-prev,
+  > .-next {
+    border: 2px solid;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    margin: 0;
+    opacity: 1;
+    top: auto;
+
+    height: 50px;
+    width: 50px;
+
+    .fas {
+      align-self: center;
+    }
+
+    &.swiper-button-disabled {
+      cursor: initial;
+      opacity: 0.5;
+    }
+  }
+  > .-prev {
+    margin-right: 15px;
+  }
+
+  &.-white {
+    > .-prev,
+    > .-next {
+      border: 2px solid $white;
+      color: $white;
+    }
+  }
+  &.-pink {
+    > .-prev,
+    > .-next {
+      border: 2px solid $pink;
+      color: $pink;
+    }
+  }
+}
+
+.swiper-pagination {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 15px;
+  position: unset;
+
+  @include respond-above(sm) {
+    display: none;
+  }
+
+  &.-pink {
+    > .swiper-pagination-bullet {
+      background-color: rgba($pink, 0.7);
+
+      &-active {
+        background-color: $pink;
+      }
+    }
+  }
+
+  > .swiper-pagination-bullet {
+    background-color: rgba($white, 0.7);
+    border-radius: 0;
+    height: 10px;
+    margin: 0;
+    margin-right: 10px;
+    width: 10px;
+
+    &-active {
+      background-color: $white;
+    }
+  }
+}

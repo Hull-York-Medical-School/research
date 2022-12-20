@@ -1,0 +1,40 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Stories" %}
+{% set description = "Stories components" %}
+{% set keywords = "Stories, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/stories/stories-main.njk" as stMain %}
+{% import "partials/components/stories/testimonial-main.njk" as teMain %}
+{% import "partials/components/stories/testimonial-small.njk" as teSmall %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="/assets/css/stories-components.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+
+  <div style="margin: 50px 0;">
+    {{ stMain.value() }}
+  </div>
+  <div style="margin: 50px 0;">
+    {{ teMain.value() }}
+  </div>
+  <div style="margin: 50px 0;">
+    {{ teSmall.value("-pink") }}
+  </div>
+{% endblock %}

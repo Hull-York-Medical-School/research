@@ -1,0 +1,126 @@
+/* purgecss start ignore */
+
+header.header {
+  & {
+    width: 100%;
+    height: 80px;
+
+    position: absolute;
+    top: 0;
+
+    margin-bottom: 0px;
+    z-index: 11;
+
+    transition: all 300ms ease-in-out;
+
+    @include respond-above(md) {
+      height: 120px;
+      margin-bottom: -42px;
+    }
+  }
+}
+
+header.header {
+  &.child {
+    // margin-bottom: 50px;
+    position: relative;
+    background: $darkblue;
+
+    @include respond-above(md) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+header.header {
+  ._container {
+    height: 100%;
+    display: flex;
+    z-index: 11;
+  }
+
+  .logo {
+    cursor: pointer;
+    position: relative;
+    align-self: center;
+    margin-top: 10px;
+    height: 60px;
+    width: 120px;
+    z-index: 3;
+    transition: all 300ms ease-in-out;
+    a {
+      display: block;
+    }
+    img {
+      object-fit: cover;
+    }
+
+    @include respond-above(md) {
+      height: 92px;
+      width: 170px;
+    }
+  }
+  nav {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-grow: 1;
+    z-index: 10;
+
+    ul {
+      list-style-type: none;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-flow: row nowrap;
+      z-index: 3;
+
+      li {
+        align-self: center;
+        cursor: pointer;
+        margin-bottom: 0;
+        margin-left: 0;
+        &.active {
+          background: $darkblue;
+        }
+        a {
+          @include font-size(16);
+          font-weight: 600;
+          color: $white;
+          display: block;
+          text: {
+            decoration: none;
+            transform: uppercase;
+          }
+          padding: 25px 20px;
+
+          @include respond-above(md) {
+            padding: 45px 20px;
+          }
+        }
+        > button {
+          appearance: none;
+          background: transparent;
+          border: none;
+          color: $white;
+          cursor: pointer;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+  .desktop-only {
+    display: none;
+    @include respond-above(md) {
+      display: block;
+    }
+  }
+
+  .mobile-only {
+    display: block;
+    @include respond-above(md) {
+      display: none;
+    }
+  }
+}
+/* purgecss end ignore */

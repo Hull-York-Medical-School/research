@@ -1,0 +1,33 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Navigation" %}
+{% set description = "Navigation components" %}
+{% set keywords = "Navigation, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/navigation/anchors.njk" as anchor %}
+{% import "partials/components/navigation/section-nav.njk" as section %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  {# <link href="/assets/css/cta-components.css" rel="stylesheet" type="text/css" /> #}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ anchor.value() }}
+
+  {{ section.value() }}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% set name="Martin Veysey" %}
+{% set role="Professor" %}
+{% set quote="I’m passionate about problem-based learning, you don’t just learn about the neuroanatomy; you learn about someone who’s had a stroke. You see the context, and then you learn it better because its real…" %}
+{% set cite="Professor Martin Veysey" %}
+{% set image="https://www.hyms.ac.uk/assets/images-hyms/continuing-education/colin-vize.xfdcb1c49.jpg" %}
+
+{% macro value() %}
+  <section class="testimonial-main">
+    <div class="image-container">
+      <div class="overlay"></div>
+      <picture>
+        <source data-srcset="{{ image }}?f=webp" alt="" type="image/webp">
+        <img class="lazy" loading="lazy" src="{{ image }}?w=8&h=8" data-src="{{ image }}" alt="{{ alt }}">
+      </picture>
+    </div>
+
+    <div class="_container">
+
+      <div class="stories-tag">
+        <p><strong>HULL YORK MEDICAL SCHOOL </strong>Stories</p>
+      </div>
+
+      <div class="text-block">
+        
+        <blockquote cite="{{ cite }}">
+          {{ quote }}
+        </blockquote>
+
+        <div class="details">
+          <span>{{ role }}</span>
+          <p>{{ name }}</p>
+        </div>
+
+      </div>
+      
+    </div>
+  </section>
+{% endmacro %}

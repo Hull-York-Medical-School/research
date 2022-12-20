@@ -1,0 +1,33 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Video" %}
+{% set description = "Video components" %}
+{% set keywords = "Video, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/video/video-featured.njk" as featured %}
+{% import "partials/components/video/video-list.njk" as list %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="/assets/css/video-components.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ featured.value("Video (featured)", "Video", "-pink") }}
+
+  {{ list.value("Video list (individuals)", "videos", "-pink") }}
+{% endblock %}

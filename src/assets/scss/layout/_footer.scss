@@ -1,0 +1,161 @@
+footer {
+  & {
+    position: relative;
+    background: $darkblue;
+    color: $white;
+    min-height: 300px;
+    padding: 60px 0;
+  }
+}
+
+footer {
+  ._container {
+    // padding: 0 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include respond-above(md) {
+      flex-direction: row;
+      gap: 50px;
+    }
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+    > .fas.fa-external-link-alt {
+      @include font-size(12);
+      margin-left: 10px;
+    }
+  }
+
+  .menus {
+    display: flex;
+    &.-internal {
+      flex-flow: row wrap;
+      margin-bottom: 40px;
+
+      @include respond-above(sm) {
+        justify-content: flex-start;
+        margin-bottom: 0;
+      }
+      @include respond-above(md) {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+      }
+    }
+    &.-external {
+      flex-direction: column;
+    }
+  }
+
+  .students {
+    > h4 {
+      font-weight: 600;
+      @include font-size(18);
+      @include line-height(24);
+      margin-bottom: 30px;
+    }
+    > ul {
+      max-width: 300px;
+      padding-right: 40px;
+      margin-bottom: 40px;
+
+      @include respond-above(sm) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .logos {
+    display: flex;
+    margin: {
+      bottom: 40px;
+      // top: 40px;
+    }
+    align-items: flex-end;
+    flex-flow: row wrap;
+
+    @include respond-above(md) {
+      justify-content: space-between;
+      // margin-top: 0;
+    }
+
+    > div {
+      @include respond-above(sm) {
+        display: block;
+        margin: {
+          bottom: 20px;
+          right: auto;
+          left: auto;
+        }
+      }
+    }
+    img {
+      height: 80px;
+      margin: {
+        bottom: 40px;
+        right: 40px;
+      }
+      width: auto;
+    }
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+
+    @include respond-above(sm) {
+      justify-content: flex-start;
+    }
+
+    ul {
+      display: flex;
+      li {
+        margin-right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      padding: 9px 22px;
+      color: $darkblue;
+      @include font-size(22);
+      transition: color 300ms ease-in-out;
+      .fab {
+        z-index: 1;
+      }
+      &:hover {
+        text-decoration: none;
+        color: $pink;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        background: url(https://www.hyms.ac.uk/site-elements/img/layout/footer/social-bground.svg) center center
+          no-repeat;
+        background-size: 40px;
+        width: 40px;
+        height: 40px;
+        z-index: 0;
+      }
+    }
+  }
+}

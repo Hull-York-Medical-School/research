@@ -1,0 +1,15 @@
+// NOTE: BASE
+
+/* purgecss start ignore */
+form,
+main {
+  position: relative;
+}
+/* purgecss end ignore */
+
+::-moz-selection,
+::selection {
+  background: $hot-pink;
+  color: $white;
+  text-shadow: none;
+}

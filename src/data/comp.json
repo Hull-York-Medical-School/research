@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "title": "Buttons",
+      "link": "./buttons.html",
+      "target": true
+    },
+    {
+      "title": "More",
+      "link": "#",
+      "target": false
+    }
+  ]
+}

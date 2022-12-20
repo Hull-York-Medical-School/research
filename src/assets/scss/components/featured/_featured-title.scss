@@ -1,0 +1,37 @@
+.featured-title {
+  text-align: center;
+}
+
+.featured-title {
+  .tag {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    align-self: center;
+  }
+  .-feature-tag {
+    padding-right: 60px;
+    min-width: 150px;
+
+    &::after {
+      content: '';
+      border: 1px solid;
+      height: 0;
+      width: 40px;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 1px);
+    }
+  }
+  .component-title {
+    font-weight: 200;
+    margin-bottom: 0;
+
+    strong {
+      display: block;
+    }
+  }
+
+  + .featured-boxes {
+    margin-top: 0;
+  }
+}

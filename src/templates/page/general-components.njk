@@ -1,0 +1,48 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "General" %}
+{% set description = "General components" %}
+{% set keywords = "General, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/general/accordion.njk" as accordion %}
+{% import "partials/components/general/body-text.njk" as body %}
+{% import "partials/components/general/forms.njk" as form %}
+{% import "partials/components/general/image-text.njk" as image %}
+{% import "partials/components/general/links.njk" as links %}
+{% import "partials/components/general/text-list.njk" as list %}
+{% import "partials/components/general/two-col-text.njk" as twoCol %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  {# <link href="/assets/css/cta-components.css" rel="stylesheet" type="text/css" /> #}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ accordion.value() }}
+
+  {{ body.value() }}
+
+  {{ form.value() }}
+
+  {{ image.value() }}
+
+  {{ links.value() }}
+
+  {{ list.value() }}
+
+  {{ twoCol.value() }}
+{% endblock %}

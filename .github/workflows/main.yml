@@ -1,0 +1,54 @@
+# This is a build and deploy to GitHub pages workflow
+name: Build and Deploy
+
+# Controls when the action will run. Triggers the workflow on push
+# events but only for the master branch
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: pa11y
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run build process
+        run: |
+          npm install
+          npm run build
+
+      # Runs a set of commands using the runners shell
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ github.GH_PAGE_DEPLOY }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
+
+  pa11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm start & npx wait-on http://localhost:3000
+      - name: Run pa11y
+        run: |
+          npm install -g pa11y
+          pa11y http://localhost:3000

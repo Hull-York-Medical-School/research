@@ -1,0 +1,41 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Carousels" %}
+{% set description = "Carousel components" %}
+{% set keywords = "carousel, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/carousels/news-and-events-carousel.njk" as news %}
+{% import "partials/components/carousels/stories-carousel.njk" as stories %}
+{% import "partials/components/carousels/testimonial-carousel.njk" as testimonials %}
+{% import "partials/components/carousels/text-slide.njk" as split %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="/assets/css/carousel-components.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="assets/js/testimonial-carousel.js"></script>
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ news.value() }}
+
+  {{ stories.value() }}
+
+  {{ testimonials.value() }}
+
+  {{ split.value() }}
+{% endblock %}

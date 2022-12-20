@@ -1,0 +1,46 @@
+{% set vidTitle="Video #all" %}
+{% set vidLong="<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab, quo accusantium sint numquam incidunt quae ullam, similique nulla explicabo libero minima doloribus.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam minus sit soluta doloremque atque fugit repudiandae ab, quo accusantium sint numquam incidunt quae ullam, similique nulla explicabo libero minima doloribus.</p>" %}
+
+{% set link="https://www.youtube-nocookie.com/embed/78IeyTwleZ4?feature=oembed&hd=1&modestbranding=1&autohide=1&showinfo=0&enablejsapi=1&rel=0&cc_load_policy=1" %}
+{% set image="//www.hyms.ac.uk/assets/images/daisy-tumour-bank/working-in-the-lab-daisy-tissue-bank.x6ac6f78f.jpg" %}
+{% set alt="Drone in someone's hand" %}
+
+{% macro value(heading, tag, colour) %}
+  <section class="video-featured">
+    <div class="_container {{ colour }}">
+
+      <div class="tag">
+        <p class="component-tag">
+          {{ tag }}
+        </p>
+      </div>
+
+      <div>
+        <h2 class="component-title">
+          {{ heading }}
+        </h2>
+      </div>
+
+      <div class="featured-container">
+          <a class="featured-card gallery" href="{{ link }}">
+            <div class="overlay"></div>
+            <picture>
+              <source data-srcset="{{ image }}?f=webp" alt="" type="image/webp">
+              <img class="lazy" loading="lazy" src="{{ image }}?w=8&h=8" data-src="{{ image }}" alt="{{ alt }}" width="880" height="480">
+            </picture>
+            
+            <div class="story-info">
+              <div class="play"></div>
+            </div>
+          </a>
+
+          <div class="details">
+            <p><strong>{{ vidTitle }}</strong></p>
+            {{ vidLong | safe }}
+          </div>
+
+      </div>
+      
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,52 @@
+@import 'components/stories/testimonial-small';
+
+.testimonial-carousel {
+}
+
+.testimonial-carousel > ._container {
+  .swiper-wrapper {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .swiper-wrapper > .swiper-slide {
+    display: flex;
+    width: 100%;
+
+    > .testimonial-small {
+      > ._container.-blue {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .controls {
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+}
+
+// colours
+.testimonial-carousel {
+  &.-lilac {
+    background: $lilac;
+  }
+  &.-pink {
+    background: $pink;
+  }
+  &.-yellow {
+    background: $yellow;
+  }
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-orange {
+    background: $orange;
+  }
+  &.-blue {
+    background: $darkblue;
+  }
+}

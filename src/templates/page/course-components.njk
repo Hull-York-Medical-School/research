@@ -1,0 +1,57 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Course" %}
+{% set description = "Course components" %}
+{% set keywords = "Course, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/course/country-quals-listing.njk" as quals %}
+{% import "partials/components/course/course-intro.njk" as intro %}
+{% import "partials/components/course/course-list.njk" as list %}
+{% import "partials/components/course/course-promo.njk" as promo %}
+{% import "partials/components/course/course-tabs.njk" as tabs %}
+{% import "partials/components/course/cpd-and-short-courses.njk" as cpd %}
+{% import "partials/components/course/funding.njk" as funding %}
+{% import "partials/components/course/modules.njk" as modules %}
+{% import "partials/components/course/pg-intro.njk" as pgIntro %}
+{% import "partials/components/course/unistats.njk" as unistats %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  {# <link href="/assets/css/cta-components.css" rel="stylesheet" type="text/css" /> #}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ quals.value() }}
+
+  {{ intro.value() }}
+
+  {{ list.value() }}
+
+  {{ promo.value() }}
+
+  {{ tabs.value() }}
+
+  {{ cpd.value() }}
+
+  {{ funding.value() }}
+
+  {{ modules.value() }}
+
+  {{ pgIntro.value() }}
+
+  {{ unistats.value() }}
+{% endblock %}

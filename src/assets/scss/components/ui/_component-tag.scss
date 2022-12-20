@@ -1,0 +1,60 @@
+.tag {
+  & {
+    margin-bottom: 40px;
+  }
+  p {
+    position: relative;
+    padding-left: 60px;
+    @include font-size(14);
+    &::before {
+      content: '';
+      border: 1px solid;
+      height: 0;
+      width: 40px;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 1px);
+    }
+  }
+}
+
+/* purgecss start ignore */
+.tag {
+  .-lilac & {
+    p::before,
+    p::after {
+      border-color: $lilac;
+    }
+  }
+  .-pink & {
+    p::before,
+    p::after {
+      border-color: $pink;
+    }
+  }
+  .-yellow & {
+    p::before,
+    p::after {
+      border-color: $yellow;
+    }
+  }
+  .-purple & {
+    p::before,
+    p::after {
+      border-color: $purple;
+    }
+  }
+  .-orange & {
+    p::before,
+    p::after {
+      border-color: $orange;
+    }
+  }
+  .-maroon & {
+    p::before,
+    p::after {
+      border-color: $maroon;
+    }
+  }
+}
+/* purgecss end ignore */

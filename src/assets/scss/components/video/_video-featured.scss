@@ -1,0 +1,93 @@
+.video-featured {
+}
+
+.video-featured > ._container {
+  .featured-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 50px;
+
+    @include respond-above(sm) {
+      flex-flow: row nowrap;
+    }
+  }
+}
+.video-featured > ._container > .featured-container {
+  .featured-card {
+    display: flex;
+    flex-basis: 100%;
+    min-height: 280px;
+    position: relative;
+
+    @include respond-above(sm) {
+      max-height: 480px;
+    }
+
+    img {
+      position: absolute;
+      z-index: -1;
+    }
+
+    .overlay {
+      background: rgba(26, 42, 57, 0.3);
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+    .story-info {
+      align-self: center;
+      display: inline-block;
+      flex-grow: 1;
+      text-align: center;
+    }
+    .story-info .play {
+      background: rgba(255, 255, 255, 0.8);
+      height: 45px;
+      width: 45px;
+      @include respond-above(sm) {
+        height: 80px;
+        width: 80px;
+      }
+
+      &::before {
+        @include font-size(20);
+        @include respond-above(sm) {
+          @include font-size(26);
+        }
+      }
+    }
+
+    &:hover {
+      .story-info .play {
+        color: #fff;
+
+        &::after {
+          height: 45px;
+          width: 45px;
+          @include respond-above(sm) {
+            height: 80px;
+            width: 80px;
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    flex-basis: 100%;
+
+    @include respond-above(sm) {
+      flex-basis: 50%;
+      height: auto;
+    }
+
+    p:first-of-type > strong {
+      @include font-size(20);
+      text-transform: uppercase;
+    }
+  }
+}

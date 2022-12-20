@@ -1,0 +1,60 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Featured" %}
+{% set description = "Featured components" %}
+{% set keywords = "Featured, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/featured/featured-title.njk" as featTitle %}
+{% import "partials/components/featured/featured-boxes.njk" as boxes %}
+{% import "partials/components/featured/featured-block.njk" as featBlock %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="/assets/css/featured-components.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+
+{% block content %}
+  <section class="info-boxes">
+    <div class="_container" style="padding-bottom:0;">
+      <h1>{{description}}</h1>
+    </div>
+  </section>
+  
+  {{ featTitle.value("featured tag", "featured title", "-pink") }}
+
+  {{ boxes.value("-pink") }}
+
+  {{ featBlock.value("-blue", "-orange", "Study options", "Study your way") }}
+{% endblock %}
+
+{#     
+  {{> components/featured/featured-title 
+      tag="Feature"
+      title="Featured <strong>title</strong>"
+      colour="-pink"
+  }}
+  
+  {{> components/featured/featured-boxes 
+      colour="-lilac"
+      title="Set of <strong>links</strong> in here"
+      content="<p>Yo! p tags here</p><ul><li>Item 1</li></ul>"
+  }}
+
+  {{> components/featured/featured-block 
+      classColour="-maroon"
+      background="-blue"
+      tag="Study options"
+      title="Study your way"
+      copy="<p>We know it is important to get the right work-life balance, so our programmes provide a flexible way for you to study around your other commitments.</p> 
+      <p>You can study short courses, individual course modules or a full Masters degree.</p> 
+      <p>Part-time options are available on all our postgraduate degrees, with some programmes also offering distance learning.</p>"
+  }} 
+#}

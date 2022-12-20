@@ -1,0 +1,82 @@
+body.freeze {
+  overflow: hidden;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+[x-cloak] {
+  display: none;
+}
+
+._container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80em;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+
+  &.-image {
+    display: flex;
+    flex-flow: column;
+
+    @include respond-above(sm) {
+      flex-flow: row;
+    }
+  }
+
+  section & {
+    padding: 30px 20px;
+
+    @include respond-above(sm) {
+      padding: 50px 20px;
+    }
+  }
+}
+
+img {
+  display: flex;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  &.initial {
+    height: auto;
+    object-fit: unset;
+    width: initial;
+  }
+}
+
+._visuallyhidden {
+  @extend %visuallyhidden;
+  &._focusable {
+    &:focus {
+      @extend %visuallyhiddenfocusable;
+    }
+  }
+}
+
+// Visually hidden
+// Usage: @extend %visuallyhidden;
+%visuallyhidden {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+%visuallyhiddenfocusable {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}

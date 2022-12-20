@@ -1,0 +1,72 @@
+.text-block {
+  & {
+    flex: 0 1 100%;
+    gap: 30px;
+  }
+  @include respond-above(sm) {
+    flex: 0 1 45%;
+  }
+
+  .component-title {
+    margin-bottom: 30px;
+  }
+
+  .content {
+    padding-left: 20px;
+    @include respond-above(sm) {
+      padding-left: 40px;
+    }
+    p + h3 {
+      margin-top: 30px;
+    }
+    .btn {
+      margin-top: 30px;
+    }
+  }
+}
+
+.text-block {
+  &.-lilac {
+    .component-title {
+      strong {
+        color: $lilac;
+      }
+    }
+  }
+  &.-pink {
+    .component-title {
+      strong {
+        color: $pink;
+      }
+    }
+  }
+  &.-yellow {
+    .component-title {
+      strong {
+        color: $yellow;
+      }
+    }
+  }
+
+  &.-purple {
+    .component-title {
+      strong {
+        color: $purple;
+      }
+    }
+  }
+  &.-orange {
+    .component-title {
+      strong {
+        color: $orange;
+      }
+    }
+  }
+  &.-maroon {
+    .component-title {
+      strong {
+        color: $maroon;
+      }
+    }
+  }
+}

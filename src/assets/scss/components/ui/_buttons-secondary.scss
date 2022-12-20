@@ -1,0 +1,28 @@
+.btn {
+  &.-secondary {
+    background: 0 0 !important;
+    padding-left: 0;
+    @include font-size(18);
+    font-weight: 700;
+    margin-right: 30px;
+    &:hover {
+      &:after {
+        right: -20px;
+      }
+    }
+    &::after {
+      content: '\f054';
+      @include font-size(18);
+      font-family: $icon;
+      font-weight: 800;
+      height: 30px;
+      line-height: 1.5;
+      padding: 0 10px;
+      position: absolute;
+      right: -15px;
+      top: calc(50% - 14px);
+      width: 30px;
+      transition: right 500ms ease-in-out;
+    }
+  }
+}

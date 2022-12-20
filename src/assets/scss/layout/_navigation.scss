@@ -1,0 +1,110 @@
+/* purgecss start ignore */
+.header.child + section.main-menu {
+  margin-top: 0;
+
+  @include respond-above(md) {
+    margin-top: 0;
+  }
+}
+
+section {
+  &.main-menu {
+    background: 0 0;
+    overflow: hidden;
+    height: 0;
+    margin-top: 80px;
+    // padding-top: 20px;
+    z-index: 2;
+
+    @include respond-above(md) {
+      margin-top: 120px;
+      padding-top: 0;
+    }
+
+    .main-search,
+    .sub-menu {
+      height: 0;
+      opacity: 0;
+      transition: opacity 200ms ease-in-out;
+
+      &.active {
+        height: min-content;
+        opacity: 1;
+        transition: opacity 200ms ease-in-out;
+      }
+    }
+
+    .main-search {
+      padding: 0 20px;
+      width: 100%;
+      label {
+        visibility: hidden;
+        display: block;
+      }
+      input {
+        background: 0 0;
+        border: none;
+        border-bottom: 1px solid $white;
+        border-radius: 0;
+        color: $white;
+        @include font-size(18);
+        font-weight: 300;
+        opacity: 0;
+        padding: 10px;
+        transition: opacity 200ms ease-in-out;
+        width: calc(100% - 112px);
+        margin-right: -6px;
+        &[type='submit'] {
+          cursor: pointer;
+          border: 1px solid $white;
+          border-radius: 0;
+          width: 104px;
+          &:hover {
+            background: $white;
+            color: $darkblue;
+          }
+        }
+      }
+      &.active {
+        input {
+          opacity: 1;
+          transition: opacity 200ms ease-in-out;
+        }
+      }
+    }
+    .sub-menu {
+      list-style-type: none;
+      li {
+        a {
+          color: $white;
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      &.active {
+        width: 100%;
+        li {
+          display: block;
+        }
+      }
+    }
+    &.active {
+      position: relative;
+      display: inline-flex;
+      justify-content: flex-start;
+      width: 100%;
+      background: rgba($darkblue, 0.98);
+      height: min-content;
+      padding-bottom: 40px;
+      z-index: 10;
+      > .central-block {
+        width: 100%;
+      }
+    }
+  }
+}
+/* purgecss end ignore */

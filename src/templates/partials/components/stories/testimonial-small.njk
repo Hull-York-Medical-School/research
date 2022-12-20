@@ -1,0 +1,35 @@
+{% set name="Martin Veysey" %}
+{% set role="Professor" %}
+{% set quote="I’m passionate about problem-based learning, you don’t just learn about the neuroanatomy; you learn about someone who’s had a stroke. You see the context, and then you learn it better because its real…" %}
+{% set cite="Professor Martin Veysey" %}
+
+{% macro value(colour) %}
+  <section class="testimonial-small">
+    <div class="_container -blue">
+
+      <div class="text-block {{ colour }}">
+        <div class="tag">
+          <p class="component-tag">
+            Testimonial
+          </p>
+        </div>
+        
+        <div>
+          <h2 class="component-title">
+            {{ name }}
+          </h2>
+          <p>{{ role }}</p>
+        </div>
+      </div>
+
+      <div class="text-block">
+        <div class="content">
+          <blockquote cite="{{ cite }}">
+            {{ quote }}
+          </blockquote>
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endmacro %}

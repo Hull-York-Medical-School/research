@@ -1,0 +1,48 @@
+// Media queries settings
+$breakpoints: (
+  // 576px
+  xs: 36em,
+  // 768px,
+  sm: 48em,
+  // 992px,
+  md: 62em,
+  // 1200px
+  lg: 75em
+);
+
+// Primary Colours
+//----------------
+$darkblue: #1a2a39;
+$lilac: #615e9b;
+$pink: #ce0037;
+$yellow: #ffbf3f;
+
+// Secondary Colours
+//------------------
+$darkgrey: #333f48;
+$purple: #4b384c;
+$maroon: #861f41;
+$orange: #d45d00;
+
+// Tertiary Colours
+//------------------
+$lightgrey: #f6f7fb;
+$lighterblue: #31404d;
+
+// Base Colours
+//-------------
+$black: #000000;
+$white: #ffffff;
+
+// Selection Colour
+//-----------------
+$hot-pink: #fe57a1;
+
+// Default font families
+//----------------------
+$font: 'Gotham SSm A', 'Gotham SSm B', 'arial', sans-serif;
+
+// Icon font families
+//-------------------
+$icon: 'Font Awesome 5 Free';
+$brand: 'Font Awesome 5 Brands';

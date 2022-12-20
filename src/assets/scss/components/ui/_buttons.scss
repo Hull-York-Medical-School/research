@@ -1,0 +1,30 @@
+.btn {
+  & {
+    position: relative;
+    padding: 15px 25px;
+    display: inline-block;
+    @include line-height(22);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $darkblue;
+  }
+
+  &.-lilac {
+    background: $lilac;
+    &:after {
+      color: $lilac;
+    }
+  }
+  &.-pink {
+    background: $pink;
+    &:after {
+      color: $pink;
+    }
+  }
+  &.-yellow {
+    background: $yellow;
+    &:after {
+      color: $yellow;
+    }
+  }
+}

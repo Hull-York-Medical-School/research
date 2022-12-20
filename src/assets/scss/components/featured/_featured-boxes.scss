@@ -1,0 +1,114 @@
+.featured-boxes > ._container {
+  .featured-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+  }
+
+  .card {
+    background: $darkblue;
+    border-top: 10px solid $yellow;
+    color: $darkblue;
+    flex: 1 1 100%;
+    @include font-size(20);
+    font-weight: 600;
+    @include line-height(24);
+    text-decoration: none;
+
+    @include respond-above(sm) {
+      flex-basis: calc(50% - 30px);
+    }
+    @include respond-above(lg) {
+      flex-basis: calc(25% - 50px);
+    }
+
+    > .link-details {
+      background: #22374b;
+      color: $white;
+      position: relative;
+      text-transform: uppercase;
+      padding: 25px;
+      min-height: 100px;
+      font-weight: 300;
+
+      flex-grow: 1;
+      @include font-size(18);
+
+      &::after {
+        top: calc(50% - 10px);
+      }
+
+      @include respond-above(sm) {
+      }
+
+      strong {
+        font-weight: 800;
+      }
+    }
+    > .links {
+      background: $darkblue;
+      min-height: 100px;
+      color: $white;
+      padding: 25px;
+      margin-top: 0;
+      p {
+        margin: 0;
+        line-height: 1.5;
+
+        > a::before {
+          display: none;
+        }
+        + p {
+          margin-top: 15px !important;
+        }
+      }
+
+      a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.featured-boxes > ._container {
+  .-pink .card {
+    border-color: $pink;
+  }
+  .-yellow .card {
+    border-color: $yellow;
+  }
+  .-lilac .card {
+    border-color: $lilac;
+  }
+
+  .card {
+    a[href^='mailto:'],
+    a[href^='tel:'] {
+      display: block;
+      @include font-size(18);
+      &::before,
+      &::before {
+        content: '';
+        position: relative;
+        font-family: 'Font Awesome 5 Free';
+        @include font-size(14);
+        font-weight: 900;
+        margin-right: 5px;
+        display: inline-block;
+        top: -1px;
+      }
+    }
+    a[href^='tel:']::before {
+      content: '\f095';
+      transform: rotate(90deg);
+    }
+    a[href^='mailto:']::before {
+      content: '\f0e0';
+      margin-right: 5px;
+    }
+  }
+}
