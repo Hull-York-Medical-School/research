@@ -23,7 +23,7 @@
   <link rel="preconnect" href="//use.fontawesome.com/" crossorigin="anonymous" />
 
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6201216/6221192/css/fonts.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" />
 
   <link href="./assets/css/layout.css" rel="stylesheet" type="text/css" /> 
 
@@ -31,8 +31,8 @@
     
   <style>
     section.test-mq {background: blue;color: white;min-height: 100px;}
-    section.test-mq ._container {background: rgba(0, 0, 0, 0.2);}
-    section.test-mq ._container p {text-align: center;}
+    section.test-mq .container {background: rgba(0, 0, 0, 0.2);}
+    section.test-mq .container p {text-align: center;}
     
     @media (min-width: 36em) {
       section.test-mq {background: red;color: initial;}
@@ -54,7 +54,7 @@
       <!-- You write code for this content block in another file -->
       
   <section class="test-mq">
-    <div class="_container">
+    <div class="container">
       <p class="user" style="margin-bottom:20px;"></p>
       <div style="display:flex;justify-content:center;"> 
         <p class="screen" style="margin-right:30px;"></p>
@@ -64,7 +64,7 @@
   </section>
 
   <section>
-    <div class="_container" style="display:flex;gap:50px;">
+    <div class="container" style="display:flex;gap:50px;">
 
       <div class="content -pink" style="flex: 0 1 33.33%;">
         <div class="tag">
@@ -114,16 +114,16 @@
 
          
   <script>
-    let media = document.querySelector('.test-mq ._container div > .screen')
-    let cont = document.querySelector('.test-mq ._container div > .cont')
+    let media = document.querySelector('.test-mq .container div > .screen')
+    let cont = document.querySelector('.test-mq .container div > .cont')
 
-    document.querySelector('.test-mq ._container > .user').innerText = navigator.userAgent
+    document.querySelector('.test-mq .container > .user').innerText = navigator.userAgent
 
     window.onresize = start
 
     function start() {
       let size = document.body.clientWidth
-      let contSize = document.querySelector('.test-mq ._container').clientWidth
+      let contSize = document.querySelector('.test-mq .container').clientWidth
       media.innerText = 'Screen size: ' + size
       cont.innerText = 'Container size: ' + contSize
     }

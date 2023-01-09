@@ -10,7 +10,7 @@ main {
   display: none;
 }
 
-._container {
+.container {
   margin: 0 auto;
   width: 100%;
   max-width: 80em;
@@ -18,20 +18,20 @@ main {
   position: relative;
   z-index: 1;
 }
-._container.-image {
+.container.-image {
   display: flex;
   flex-flow: column;
 }
 @media (min-width: 48em) {
-  ._container.-image {
+  .container.-image {
     flex-flow: row;
   }
 }
-section ._container {
+section .container {
   padding: 30px 20px;
 }
 @media (min-width: 48em) {
-  section ._container {
+  section .container {
     padding: 50px 20px;
   }
 }
