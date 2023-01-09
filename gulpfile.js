@@ -125,12 +125,6 @@ function css() {
     .pipe(dest(paths.styles.output))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCss({ level: { 1: { specialComments: 'none' } } }))
-    .pipe(
-      notify({
-        title: 'Stylesheet updated successfully',
-        message: '<%= file.relative %>'
-      })
-    )
     .pipe(dest(paths.styles.output))
     .pipe(browserSync.stream())
 }
@@ -142,17 +136,13 @@ function js(cb) {
     .pipe(webpackStream(webpackConfig, webpack))
     .on('error', function (error) {
       notify().write({
+        title: 'JS error!!',
+        subtitle: 'See the terminal for more information.',
         message: error.message
       })
       this.emit('end')
     })
     .pipe(dest(paths.scripts.output))
-    .pipe(
-      notify({
-        title: 'Webpack',
-        message: 'Generated file: <%= file.relative %>'
-      })
-    )
 }
 
 // NOTE: OPTIMISE IMAGE FILES
