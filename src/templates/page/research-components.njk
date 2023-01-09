@@ -8,11 +8,12 @@
 {% set pageMenu = "float" %}
 
 {# COMPONENTS #}
-{# {% import "partials/components/carousels/news-and-events-carousel.njk" as news %} #}
+{% import "partials/components/research/hero/hero.njk" as hero %}
 
 {# Styles and sceripts added here #}
 {% block styles %}
   {# <link href="/assets/css/carousel-components.css" rel="stylesheet" type="text/css" /> #}
+  {{ hero.styles() }}
 {% endblock %}
 
 {% block scripts %}
@@ -31,7 +32,7 @@
       {{ title + ': ' }} Hero</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ hero.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-2">
