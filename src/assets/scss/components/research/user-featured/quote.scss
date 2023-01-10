@@ -1,0 +1,63 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.quote {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 1;
+
+  blockquote {
+    border-left: 4px solid;
+    font-weight: 600;
+    margin-top: 0;
+    padding-left: 20px;
+    position: relative;
+
+    text-transform: uppercase;
+
+    font-size: clamp(2.1875rem, 10vw, 3rem);
+    line-height: 1.25;
+
+    @include respond-above(sm) {
+      padding-left: 50px;
+    }
+
+    .person > p {
+      font-weight: 600;
+      &:first-child {
+        margin: {
+          bottom: 0;
+          top: 30px;
+        }
+      }
+    }
+  }
+}
+
+.quote {
+  blockquote {
+    &.-purple {
+      border-left-color: $purple;
+      color: $purple;
+    }
+    &.-maroon {
+      border-left-color: $maroon;
+      color: $maroon;
+    }
+    &.-grey {
+      border-left-color: $lightgrey;
+      color: $lightgrey;
+    }
+    &.-dark-grey {
+      border-left-color: $darkgrey;
+      color: $darkgrey;
+    }
+    &.-dark-blue {
+      border-left-color: $darkblue;
+      color: $darkblue;
+    }
+  }
+}
