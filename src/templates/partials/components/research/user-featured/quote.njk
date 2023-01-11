@@ -1,0 +1,36 @@
+{# 
+  Background colours: "", "-purple", "-maroon", "-grey", "-dark-grey", "-dark-blue"
+ #}
+
+{% set items = [
+  {
+    "borderColour": "-dark-blue",
+    "quote": "\"OUR AIM IS TO ADVANCE HEALTHCARE THROUGH OUR RESEARCH AND THE IMPACT OF OUR TEACHING.\"",
+    "name": "Professor Una Macleod",
+    "role": "Dean of Hull York Medical School"
+  }
+] %}
+
+{% macro styles() %}
+  <link rel="stylesheet" href="assets/css/components/research/user-featured/quote.min.css" type="text/css"/>
+{% endmacro %}
+
+{% macro scripts() %}
+{% endmacro %}
+
+{% macro value() %}
+  {% for item in items %}
+    <section class="quote">
+      <div class="container">
+          <blockquote class="quote heading-2 {{ item.borderColour }}">
+            {{ item.quote }} 
+
+            <div class="person">
+              <p>{{ item.name }}</p>
+              <p>{{ item.role }}</p>
+            </div>
+          </blockquote>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}
