@@ -502,6 +502,213 @@ sup {
 }
 
 /* purgecss end ignore */
+.btn {
+  position: relative;
+  padding: 15px 25px;
+  display: inline-block;
+  line-height: 22px;
+  line-height: 1.375rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #1a2a39;
+}
+.btn.-lilac {
+  background: #615e9b;
+}
+.btn.-lilac:after {
+  color: #615e9b;
+}
+.btn.-pink {
+  background: #ce0037;
+}
+.btn.-pink:after {
+  color: #ce0037;
+}
+.btn.-yellow {
+  background: #ffbf3f;
+}
+.btn.-yellow:after {
+  color: #ffbf3f;
+}
+
+.btn.-primary {
+  overflow: hidden;
+  height: auto;
+  min-width: 180px;
+  padding: 18px 80px 18px 18px;
+  position: relative;
+  z-index: 1;
+  transition: color 300ms ease-in-out 200ms;
+}
+.btn.-primary:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 0;
+  right: 0;
+  top: 0;
+  transform: skewX(-15deg);
+  transition: all 400ms ease-in-out 200ms;
+  z-index: -1;
+}
+.btn.-primary:hover:before {
+  width: 100%;
+  margin-right: 60px;
+}
+.btn.-primary:hover > span:before {
+  width: 77px;
+  transition: width 300ms ease-in-out;
+}
+.btn.-primary:hover > span:after {
+  transition-delay: 50ms;
+}
+.btn.-primary > span {
+  height: 100%;
+  width: 80px;
+  display: inline-block;
+  position: absolute;
+  right: -12px;
+  top: 0;
+  transform: skewX(-15deg);
+}
+.btn.-primary > span:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  right: 0;
+  transition: width 300ms ease-in-out 400ms, background 300ms ease-in-out 200ms;
+}
+.btn.-primary > span:after {
+  position: absolute;
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 800;
+  right: calc(50% - 4px);
+  transform: skewX(15deg);
+  transition: color 300ms ease-in-out 400ms;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.btn.-primary.-default {
+  background: #ffffff;
+}
+.btn.-primary.-default:before {
+  background: #ce0037;
+}
+.btn.-primary.-default span {
+  background: #ce0037;
+}
+.btn.-primary.-default span:before {
+  background: #ffffff;
+}
+.btn.-primary.-default span:after {
+  color: #ffffff;
+}
+.btn.-primary.-default:hover {
+  color: #ffffff;
+}
+.btn.-primary.-default:hover span:after {
+  color: #ce0037;
+}
+.btn.-primary.-dark.-lilac {
+  background: #1a2a39;
+  color: #ffffff;
+}
+.btn.-primary.-dark.-lilac:before {
+  background: #615e9b;
+}
+.btn.-primary.-dark.-lilac span {
+  background: #615e9b;
+}
+.btn.-primary.-dark.-lilac span:before {
+  background: #1a2a39;
+}
+.btn.-primary.-dark.-lilac span:after {
+  color: #ffffff;
+}
+.btn.-primary.-dark.-lilac:hover {
+  color: #ffffff;
+}
+.btn.-primary.-dark.-lilac:hover span:after {
+  color: #615e9b;
+}
+.btn.-primary.-dark.-pink {
+  background: #1a2a39;
+  color: #ffffff;
+}
+.btn.-primary.-dark.-pink:before {
+  background: #ce0037;
+}
+.btn.-primary.-dark.-pink span {
+  background: #ce0037;
+}
+.btn.-primary.-dark.-pink span:before {
+  background: #1a2a39;
+}
+.btn.-primary.-dark.-pink span:after {
+  color: #ffffff;
+}
+.btn.-primary.-dark.-pink:hover {
+  color: #ffffff;
+}
+.btn.-primary.-dark.-pink:hover span:after {
+  color: #ce0037;
+}
+.btn.-primary.-dark.-yellow {
+  background: #1a2a39;
+  color: #ffffff;
+}
+.btn.-primary.-dark.-yellow:before {
+  background: #ffbf3f;
+}
+.btn.-primary.-dark.-yellow span {
+  background: #ffbf3f;
+}
+.btn.-primary.-dark.-yellow span:before {
+  background: #1a2a39;
+}
+.btn.-primary.-dark.-yellow span:after {
+  color: #ffffff;
+}
+.btn.-primary.-dark.-yellow:hover {
+  color: #1a2a39;
+}
+.btn.-primary.-dark.-yellow:hover span:after {
+  color: #ffbf3f;
+}
+
+.btn.-secondary {
+  background: 0 0 !important;
+  padding-left: 0;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-right: 30px;
+}
+.btn.-secondary:hover:after {
+  right: -20px;
+}
+.btn.-secondary::after {
+  content: "\f054";
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  height: 30px;
+  line-height: 1.5;
+  padding: 0 10px;
+  position: absolute;
+  right: -15px;
+  top: calc(50% - 14px);
+  width: 30px;
+  transition: right 500ms ease-in-out;
+}
+
 /* purgecss start ignore */
 header.header {
   width: 100%;
