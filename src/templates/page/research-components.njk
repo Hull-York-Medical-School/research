@@ -9,11 +9,17 @@
 
 {# COMPONENTS #}
 {% import "partials/components/research/hero/hero.njk" as hero %}
+{% import "partials/components/research/featured/intro.njk" as intro %}
+{% import "partials/components/research/user-featured/quote.njk" as quote %}
+{% import "partials/components/research/user-featured/partners.njk" as partner %}
 
 {# Styles and sceripts added here #}
 {% block styles %}
   {# <link href="/assets/css/carousel-components.css" rel="stylesheet" type="text/css" /> #}
   {{ hero.styles() }}
+  {{ intro.styles() }}
+  {{ quote.styles() }}
+  {{ partner.styles() }}
 {% endblock %}
 
 {% block scripts %}
@@ -39,7 +45,7 @@
       {{ title + ': ' }} Featured intro</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ intro.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-2">Card related</h2>
@@ -101,14 +107,14 @@
       {{ title + ': ' }} Partner strip</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ partner.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-3">
       {{ title + ': ' }} Quote</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ quote.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-2">Carousel related</h2>
