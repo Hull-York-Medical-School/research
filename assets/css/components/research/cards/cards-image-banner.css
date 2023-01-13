@@ -42,6 +42,46 @@
 .cards-image-banner > .container .content-container .description > .btn {
   margin-top: 15px;
 }
+.cards-image-banner > .container .content-container > .card-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 50px;
+}
+.cards-image-banner > .container .content-container > .card-container > .card {
+  flex: 1 1 calc(33.3333333333% - 40px);
+}
+.cards-image-banner > .container .content-container > .card-container > .card:hover a > .info > span {
+  margin-left: 10px;
+}
+.cards-image-banner > .container .content-container > .card-container > .card a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.cards-image-banner > .container .content-container > .card-container > .card a > .image-container {
+  margin-bottom: 20px;
+  max-height: 200px;
+  order: -1;
+  overflow: hidden;
+}
+.cards-image-banner > .container .content-container > .card-container > .card a > .info {
+  align-items: flex-end;
+  color: #1a2a39;
+  display: flex;
+  gap: 20px;
+}
+.cards-image-banner > .container .content-container > .card-container > .card a > .info > h3,
+.cards-image-banner > .container .content-container > .card-container > .card a > .info > .heading-5 {
+  margin-bottom: 0;
+  max-width: 340px;
+}
+.cards-image-banner > .container .content-container > .card-container > .card a > .info > span {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  margin-left: 0;
+  transition: margin-left 300ms ease-in-out;
+}
 
 .cards-image-banner.-purple {
   background: #4b384c;
