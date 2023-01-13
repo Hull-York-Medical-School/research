@@ -31,13 +31,18 @@
   background: #ffffff;
   color: #333f48;
   margin-right: 0;
+  padding: 25px;
   max-width: 510px;
-  padding: 40px;
   z-index: 0;
 }
+@media (min-width: 48em) {
+  .hero-container > .container .content-container {
+    padding: 40px;
+  }
+}
 .hero-container > .container .content-container > .title {
-  font-size: 45px;
-  font-size: 2.8125rem;
+  font-size: 35px;
+  font-size: 2.1875rem;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 25px;
