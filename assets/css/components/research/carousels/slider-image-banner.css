@@ -94,11 +94,11 @@
   width: 100%;
 }
 .slider-image-banner > .container > .swiper > .card a > .info {
+  align-items: flex-end;
   background: #ffffff;
   bottom: 0;
   color: #1a2a39;
   display: flex;
-  flex-direction: column;
   flex-shrink: 0;
   gap: 20px;
   padding: 20px;
