@@ -14,6 +14,7 @@
 {% import "partials/components/research/user-featured/quote.njk" as quote %}
 {% import "partials/components/research/user-featured/partners.njk" as partner %}
 
+{% import "partials/components/research/cards/small-cards.njk" as smallCards %}
 {% import "partials/components/research/cards/standard-cards.njk" as stdCards %}
 {% import "partials/components/research/cards/cards-image-banner.njk" as ciBanner %}
 
@@ -31,6 +32,7 @@
   {{ quote.styles() }}
   {{ partner.styles() }}
 
+  {{ smallCards.styles() }}
   {{ stdCards.styles() }}
   {{ ciBanner.styles() }}
 
@@ -74,7 +76,7 @@
       {{ title + ': ' }} Cards small</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ smallCards.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-3">
