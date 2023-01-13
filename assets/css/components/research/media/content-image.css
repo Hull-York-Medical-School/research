@@ -1,0 +1,67 @@
+.content-image > .container {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+}
+@media (min-width: 62em) {
+  .content-image > .container {
+    gap: 80px;
+  }
+}
+.content-image > .container .image-container,
+.content-image > .container .content-container {
+  flex: 1 1 50%;
+}
+
+.content-image > .container .content-container .heading-2 {
+  margin-bottom: 40px;
+}
+.content-image > .container .content-container .description {
+  padding-left: 20px;
+}
+@media (min-width: 48em) {
+  .content-image > .container .content-container .description {
+    padding-left: 40px;
+  }
+}
+.content-image > .container .content-container .description > .btn {
+  margin-top: 15px;
+}
+
+.content-image.-purple, .content-image.-maroon, .content-image.-dark-grey, .content-image.-dark-blue {
+  color: #ffffff;
+}
+.content-image.-purple a, .content-image.-maroon a, .content-image.-dark-grey a, .content-image.-dark-blue a {
+  color: #ffffff;
+}
+.content-image.-purple {
+  background: #4b384c;
+}
+.content-image.-maroon {
+  background: #861f41;
+}
+.content-image.-grey {
+  background: #efefef;
+}
+.content-image.-dark-grey {
+  background: #333f48;
+}
+.content-image.-dark-blue {
+  background: #1a2a39;
+}
+.content-image.-left > .container {
+  flex-direction: column;
+}
+@media (min-width: 62em) {
+  .content-image.-left > .container {
+    flex-direction: row;
+  }
+}
+.content-image.-right > .container {
+  flex-direction: column-reverse;
+}
+@media (min-width: 62em) {
+  .content-image.-right > .container {
+    flex-direction: row-reverse;
+  }
+}
