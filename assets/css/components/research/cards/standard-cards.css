@@ -3,11 +3,6 @@
   flex-flow: column;
   justify-content: center;
 }
-.regular-cards > .container .heading-2 {
-  font-weight: 400;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-}
 .regular-cards > .container .card-container {
   display: flex;
   flex-flow: row wrap;
