@@ -1,0 +1,33 @@
+{# 
+  Background colours: "", "-purple", "-maroon", "-grey", "-dark-grey", "-dark-blue"
+ #}
+
+{% set items = [
+  {
+    "bgColour": "-grey",
+    "title": "WHAT WE DO",
+    "content": "<p>Our research takes on some of the major global health challenges: health inequalities, mental health and addiction, palliative care, and skin. We aim to improve health for everyone.</p>"
+  }
+] %}
+
+{% macro styles() %}
+  <link rel="stylesheet" href="assets/css/components/research/featured/intro.min.css" type="text/css"/>
+{% endmacro %}
+
+{% macro scripts() %}
+{% endmacro %}
+
+{% macro value() %}
+  {% for item in items %}
+    <section class="intro {{ item.bgColour }}">
+      <div class="container">
+        <h2 class="component-title">
+          {{ item.title }}
+        </h2>
+        <div class="content">
+          {{ item.content | safe}}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}

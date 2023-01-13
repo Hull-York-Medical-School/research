@@ -1,0 +1,38 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.intro > .container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro > .container {
+  .heading-2 {
+    font-weight: 500;
+  }
+
+  .content {
+    max-width: 800px;
+    text-align: center;
+  }
+}
+
+.intro {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+}

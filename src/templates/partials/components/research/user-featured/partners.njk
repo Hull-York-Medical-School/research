@@ -1,0 +1,46 @@
+{# 
+  Background colours: "", "-purple", "-maroon", "-grey", "-dark-grey", "-dark-blue"
+ #}
+
+{% set items = [
+  {
+    "bgColour": "",
+    "title": "Our partners",
+    "partners": [
+      {"logo": "https://mma.prnewswire.com/media/3924/Smith_Nephew_Logo.jpg"},
+      {"logo": "https://1000logos.net/wp-content/uploads/2021/03/Reckitt-logo.png"},
+      {"logo": "https://static.tildacdn.com/tild6432-3164-4462-b236-646562396234/PG__RGB.png"},
+      {"logo": "https://www.northcheshirechamber.co.uk/wp-content/uploads/2018/03/astrazeneca__logo.png"},
+      {"logo": "https://logonoid.com/images/msd-logo.png"},
+      {"logo": "https://i0.wp.com/doctorpreneurs.com/wp-content/uploads/2019/03/nhs-england-1.jpg"},
+      {"logo": "https://www.nhsjobs.com/pub/employer_logos/164.png"},
+      {"logo": "https://assets.change.org/photos/4/fz/ix/PTFziXvDIhrJNxa-800x450-noPad.jpg"}
+    ]
+  }
+] %}
+
+{% macro styles() %}
+  <link rel="stylesheet" href="assets/css/components/research/user-featured/partners.min.css" type="text/css"/>
+{% endmacro %}
+
+{% macro scripts() %}
+{% endmacro %}
+
+{% macro value() %}
+  {% for item in items %}
+    <section class="partners">
+      <div class="container">
+        <h2 class="component-title">
+          {{ item.title }}
+        </h2>
+        <div class="partners">
+          {% for partner in item.partners %}
+            <figure class="logo">
+              <img src="{{ partner.logo }}" alt="Logo">
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endfor %}
+{% endmacro %}
