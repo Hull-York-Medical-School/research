@@ -1,0 +1,60 @@
+{# 
+  Background colours: "-bright-pink", "-pink", "-orange", "-teal", "-blue", "-dark-blue", "-dark-purple"
+  Height: "-large", "-small", ""
+  Title size: "-large", "-small", ""
+ #}
+
+{% set items=[
+    {
+      "bgColour": "-grey",
+      "position": "-left",
+      "backgroundImage": "https://images.unsplash.com/photo-1618218630053-07b524185bbf",
+      "caption": "Researchers in the lab at York University",
+      "title": "How we’re doing it",
+      "content": "<p>We believe ground-breaking discoveries can only happen in a collaborative and inclusive research environment.</p><p>Our unique partnership with the University of Hull and the University of York, brings together world leading experts across a range of disciplines, and offers a great environment in which to conduct research which has discovery and innovation at its heart.</p>",
+      "linkText": "DISCOVER MORE ABOUT OUR RESEARCH ENVIRONMENT",
+      "link": "#"
+    }
+  ] 
+%}
+
+{% macro styles() %}
+  <link rel="stylesheet" href="assets/css/components/research/media/content-image.min.css" type="text/css" />
+{% endmacro %}
+
+{% macro scripts() %}
+  {# <script src="assets/js/hero.js"></script> #}
+{% endmacro %}
+
+{% macro value() %}
+{% for item in items %}
+  <section class="content-image {{ item.bgColour }} {{ item.position }}">
+    <div class="container">
+
+      <div class="content-container">
+
+        <h2 class="heading-2">{{ item.title }}</h2>
+
+        {% if (item.content) %}
+        <div class="description">
+          {{ item.content | safe }}
+
+          <a href="{{ item.link }}" class="btn -secondary">{{ item.linkText }}</a>
+        </div>
+        {% endif %}
+      
+      </div>
+
+      <div class="image-container">
+        <picture>
+          <source media="(max-width: 578px)" data-srcset="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=webp&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=800' }}" type="image/webp">
+          <source media="(max-width: 578px)" data-srcset="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=800' }}">
+          <source data-srcset="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=webp&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=1440' }}" type="image/webp">
+          <img class="lazy" src="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=8&h=8' }}" data-src="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=1440&h=900' }}" alt="Siemens">
+        </picture>
+      </div>
+
+    </div>
+  </section>
+{% endfor %}
+{% endmacro %}
