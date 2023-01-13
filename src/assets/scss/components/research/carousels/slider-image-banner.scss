@@ -110,11 +110,11 @@
       }
       > .info {
         & {
+          align-items: flex-end;
           background: $white;
           bottom: 0;
           color: $darkblue;
           display: flex;
-          flex-direction: column;
           flex-shrink: 0;
           gap: 20px;
           padding: 20px;
