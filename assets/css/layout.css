@@ -709,6 +709,85 @@ sup {
   transition: right 500ms ease-in-out;
 }
 
+.controls {
+  display: none;
+}
+@media (min-width: 48em) {
+  .controls {
+    align-self: flex-end;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    z-index: 2;
+  }
+}
+.controls > .-prev,
+.controls > .-next {
+  border: 2px solid;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  margin: 0;
+  opacity: 1;
+  top: auto;
+  height: 50px;
+  width: 50px;
+}
+.controls > .-prev .fa-solid,
+.controls > .-next .fa-solid {
+  align-self: center;
+}
+.controls > .-prev.swiper-button-disabled,
+.controls > .-next.swiper-button-disabled {
+  cursor: initial;
+  opacity: 0.5;
+}
+.controls > .-prev {
+  margin-right: 15px;
+}
+.controls.-white > .-prev,
+.controls.-white > .-next {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.controls.-pink > .-prev,
+.controls.-pink > .-next {
+  border: 2px solid #ce0037;
+  color: #ce0037;
+}
+
+.swiper-pagination {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 15px;
+  position: unset;
+}
+@media (min-width: 48em) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+.swiper-pagination.-pink > .swiper-pagination-bullet {
+  background-color: rgba(206, 0, 55, 0.7);
+}
+.swiper-pagination.-pink > .swiper-pagination-bullet-active {
+  background-color: #ce0037;
+}
+.swiper-pagination > .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0;
+  height: 10px;
+  margin: 0;
+  margin-right: 10px;
+  width: 10px;
+}
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
+
 /* purgecss start ignore */
 header.header {
   width: 100%;

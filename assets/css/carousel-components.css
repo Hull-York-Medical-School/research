@@ -820,8 +820,8 @@ button.swiper-pagination-bullet {
   height: 50px;
   width: 50px;
 }
-.controls > .-prev .fas,
-.controls > .-next .fas {
+.controls > .-prev .fa-solid,
+.controls > .-next .fa-solid {
   align-self: center;
 }
 .controls > .-prev.swiper-button-disabled,
