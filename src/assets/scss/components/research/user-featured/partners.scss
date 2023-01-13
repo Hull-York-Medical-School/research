@@ -1,0 +1,62 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.partners > .container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.partners > .container {
+  max-width: 1600px;
+  .heading-2 {
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  .content {
+    max-width: 800px;
+    text-align: center;
+  }
+  .partners {
+    align-items: baseline;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+
+    .logo {
+      display: flex;
+      flex: {
+        grow: 1;
+        shrink: 1;
+      }
+      height: 80px;
+      max-width: 230px;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.partners {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+}

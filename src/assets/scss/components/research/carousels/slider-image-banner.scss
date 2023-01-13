@@ -1,0 +1,80 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.slider-image-banner {
+  & {
+    align-items: flex-end;
+    background: $white;
+    display: flex;
+    min-height: 700px;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.slider-image-banner > .image-container {
+  & {
+    height: 100%;
+    max-height: 700px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  img,
+  video {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.slider-image-banner > .container {
+  & {
+    display: flex;
+    justify-content: center;
+  }
+  .content-container {
+    background: $white;
+    margin-top: 500px;
+    max-width: 1400px;
+    padding: 40px;
+    width: 100%;
+
+    .heading-2 {
+      margin-bottom: 40px;
+    }
+
+    .description > .btn {
+      margin-top: 15px;
+    }
+  }
+}
+
+.slider-image-banner {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+
+  &.-left > .container {
+    justify-content: flex-start;
+  }
+  &.-right > .container {
+    justify-content: flex-end;
+  }
+}
