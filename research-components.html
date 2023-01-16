@@ -146,8 +146,8 @@
   <template x-on:open-menu.window="isMenuOpen = $event.detail.isMenuOpen; freeze();"></template>
   <template x-on:open-search.window="isSearchOpen = $event.detail.isSearchOpen; freeze();"></template>
 
-  <template x-if="screenSize > 992 && isSearchOpen === true">
-    <div class="_container">
+  <template x-if="screenSize > 992 && isSearchOpen === true"> 
+    <div class="container">
       <div class="main-search" :class="{ 'active': isSearchOpen }">
         <div class="sys_theme-simple sys_searchcontrolstandard-themed">
             <div class="sys_search-query-control">
@@ -161,7 +161,7 @@
   </template>
 
   <template x-if="screenSize <= 992">
-    <div class="_container">
+    <div class="container">
 
       <template x-if="screenSize <= 992 && isSearchOpen === true">
         <div class="main-search" :class="{ 'active': isSearchOpen }">
