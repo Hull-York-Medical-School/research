@@ -768,11 +768,6 @@
   margin-bottom: 20px;
 }
 
-/* purgecss start ignore */
-.plyr__poster {
-  z-index: -1;
-}
-
 .glightbox-container {
   width: 100%;
   height: 100%;
@@ -783,11 +778,8 @@
   overflow: hidden;
   touch-action: none;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  outline: none;
+  outline: 0;
   overflow: hidden;
 }
 
@@ -872,7 +864,7 @@
 
 .gslide iframe,
 .gslide video {
-  outline: none !important;
+  outline: 0 !important;
   border: none;
   min-height: 165px;
   -webkit-overflow-scrolling: touch;
@@ -886,9 +878,11 @@
 .gslide-image img {
   max-height: 100vh;
   display: block;
+  max-width: 100%;
+  margin: 0;
   padding: 0;
   float: none;
-  outline: none;
+  outline: 0;
   border: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -903,8 +897,8 @@
   min-width: 200px;
 }
 
-.desc-top .gslide-image img,
-.desc-bottom .gslide-image img {
+.desc-bottom .gslide-image img,
+.desc-top .gslide-image img {
   width: auto;
 }
 
@@ -924,14 +918,16 @@
 }
 
 .gslide-video {
+  width: 100%;
+  max-width: 100%;
   position: relative;
+  width: 100vh;
   max-width: 100vh;
   width: 100% !important;
 }
 
 .gslide-video .gvideo-wrapper {
   width: 100%;
-  /* max-width: 160vmin; */
   margin: auto;
 }
 
@@ -996,6 +992,8 @@
 }
 
 .gslide-media {
+  display: block;
+  display: inline-flex;
   display: flex;
   width: auto;
 }
@@ -1004,8 +1002,8 @@
   box-shadow: none !important;
 }
 
-.desc-top .gslide-media,
-.desc-bottom .gslide-media {
+.desc-bottom .gslide-media,
+.desc-top .gslide-media {
   margin: 0 auto;
   flex-direction: column;
 }
@@ -1038,19 +1036,10 @@
   display: none;
 }
 
-.glightbox-button-hidden {
-  display: none;
-}
-
-/*
- * Description for mobiles
- * something like facebook does the description
- * for the photos
-*/
 .glightbox-mobile .glightbox-container .gslide-description {
   height: auto !important;
   width: 100%;
-  background: transparent;
+  background: 0 0;
   position: absolute;
   bottom: 15px;
   padding: 19px 11px;
@@ -1058,7 +1047,7 @@
   order: 2 !important;
   max-height: 78vh;
   overflow: auto !important;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.75) 100%);
   transition: opacity 0.3s linear;
   padding-bottom: 50px;
 }
@@ -1074,7 +1063,7 @@
 
 .glightbox-mobile .glightbox-container .gslide-desc a {
   color: #fff;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .glightbox-mobile .glightbox-container .gslide-desc * {
@@ -1142,9 +1131,9 @@
 
 .goverlay {
   width: 100%;
-  height: calc(100vh + 1px);
+  height: 100%;
   position: fixed;
-  top: -1px;
+  top: 0;
   left: 0;
   background: #000;
   will-change: opacity;
@@ -1154,39 +1143,37 @@
   background: #000;
 }
 
-.gprev,
+.gclose,
 .gnext,
-.gclose {
+.gprev {
+  background-repeat: no-repeat;
   z-index: 99999;
   cursor: pointer;
   width: 26px;
   height: 44px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.gprev svg,
-.gnext svg,
-.gclose svg {
   display: block;
-  width: 25px;
-  height: auto;
-  margin: 0;
-  padding: 0;
+  background-position: 0 0;
+  border: none;
 }
 
-.gprev.disabled,
+.gclose svg,
+.gnext svg,
+.gprev svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: unset;
+}
+
+.gclose.disabled,
 .gnext.disabled,
-.gclose.disabled {
+.gprev.disabled {
   opacity: 0.1;
 }
 
-.gprev .garrow,
+.gclose .garrow,
 .gnext .garrow,
-.gclose .garrow {
+.gprev .garrow {
   stroke: #fff;
 }
 
@@ -1194,92 +1181,116 @@ iframe.wait-autoplay {
   opacity: 0;
 }
 
+.glightbox-closing .gclose,
 .glightbox-closing .gnext,
-.glightbox-closing .gprev,
-.glightbox-closing .gclose {
+.glightbox-closing .gprev {
   opacity: 0 !important;
 }
 
-/*Skin */
-.glightbox-clean .gslide-description {
+.glightbox-clean .gslide-description,
+.glightbox-modern .gslide-description {
   background: #fff;
 }
 
-.glightbox-clean .gdesc-inner {
+.glightbox-clean .gdesc-inner,
+.glightbox-modern .gdesc-inner {
   padding: 22px 20px;
 }
 
-.glightbox-clean .gslide-title {
+.glightbox-clean .gslide-title,
+.glightbox-modern .gslide-title {
   font-size: 1em;
-  font-weight: normal;
+  font-weight: 400;
   font-family: arial;
   color: #000;
   margin-bottom: 19px;
   line-height: 1.4em;
 }
 
-.glightbox-clean .gslide-desc {
+.glightbox-clean .gslide-desc,
+.glightbox-modern .gslide-desc {
   font-size: 0.86em;
   margin-bottom: 0;
   font-family: arial;
   line-height: 1.4em;
 }
 
-.glightbox-clean .gslide-video {
+.glightbox-clean .gslide-video,
+.glightbox-modern .gslide-video {
   background: #000;
 }
 
-.glightbox-clean .gprev,
+.glightbox-clean .gclose,
 .glightbox-clean .gnext,
-.glightbox-clean .gclose {
-  background-color: rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
+.glightbox-clean .gprev,
+.glightbox-modern .gclose,
+.glightbox-modern .gnext,
+.glightbox-modern .gprev {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
-.glightbox-clean .gprev path,
+.glightbox-clean .gclose:hover,
+.glightbox-clean .gnext:hover,
+.glightbox-clean .gprev:hover,
+.glightbox-modern .gclose:hover,
+.glightbox-modern .gnext:hover,
+.glightbox-modern .gprev:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.glightbox-clean .gclose path,
 .glightbox-clean .gnext path,
-.glightbox-clean .gclose path {
+.glightbox-clean .gprev path,
+.glightbox-modern .gclose path,
+.glightbox-modern .gnext path,
+.glightbox-modern .gprev path {
   fill: #fff;
 }
 
-.glightbox-clean button:focus:not(.focused):not(.disabled) {
-  outline: none;
+.glightbox-clean button:focus:not(.focused):not(.disabled),
+.glightbox-modern button:focus:not(.focused):not(.disabled) {
+  outline: 0;
 }
 
-.glightbox-clean .gprev {
+.glightbox-clean .gprev,
+.glightbox-modern .gprev {
   position: absolute;
   top: -100%;
   left: 30px;
   width: 40px;
-  height: 50px;
+  height: 56px;
 }
 
-.glightbox-clean .gnext {
+.glightbox-clean .gnext,
+.glightbox-modern .gnext {
   position: absolute;
   top: -100%;
   right: 30px;
   width: 40px;
-  height: 50px;
+  height: 56px;
 }
 
-.glightbox-clean .gclose {
+.glightbox-clean .gclose,
+.glightbox-modern .gclose {
   width: 35px;
   height: 35px;
   top: 15px;
   right: 10px;
   position: absolute;
+  opacity: 0.7;
+  background-position: -59px 2px;
 }
 
-.glightbox-clean .gclose svg {
-  width: 18px;
-  height: auto;
+.glightbox-clean .gclose svg,
+.glightbox-modern .gclose svg {
+  width: 20px;
 }
 
-.glightbox-clean .gclose:hover {
+.glightbox-clean .gclose:hover,
+.glightbox-modern .gclose:hover {
   opacity: 1;
 }
 
-/*CSS Animations*/
 .gfadeIn {
   animation: gfadeIn 0.5s ease;
 }
@@ -1313,7 +1324,7 @@ iframe.wait-autoplay {
 }
 @keyframes lightboxLoader {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   100% {
     transform: rotate(360deg);
@@ -1422,6 +1433,7 @@ iframe.wait-autoplay {
   }
   .gslide-image img {
     max-height: 97vh;
+    max-width: calc(100% - 20px);
     max-width: 100%;
   }
   .gslide-image img.zoomable {
@@ -1446,35 +1458,30 @@ iframe.wait-autoplay {
   .goverlay {
     background: rgba(0, 0, 0, 0.92);
   }
-  .glightbox-clean .gslide-media {
-    box-shadow: 1px 2px 9px 0px rgba(0, 0, 0, 0.65);
+  .glightbox-clean .gslide-media,
+  .glightbox-modern .gslide-media {
+    box-shadow: 1px 2px 9px 0 rgba(0, 0, 0, 0.65);
   }
   .glightbox-clean .description-left .gdesc-inner,
-  .glightbox-clean .description-right .gdesc-inner {
+  .glightbox-clean .description-right .gdesc-inner,
+  .glightbox-modern .description-left .gdesc-inner,
+  .glightbox-modern .description-right .gdesc-inner {
     position: absolute;
     height: 100%;
     overflow-y: auto;
   }
   .glightbox-clean .gprev,
-  .glightbox-clean .gnext,
-  .glightbox-clean .gclose {
-    background-color: rgba(0, 0, 0, 0.32);
-  }
-  .glightbox-clean .gprev:hover,
-  .glightbox-clean .gnext:hover,
-  .glightbox-clean .gclose:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  .glightbox-clean .gprev {
+  .glightbox-modern .gprev {
     top: 45%;
   }
-  .glightbox-clean .gnext {
+  .glightbox-clean .gnext,
+  .glightbox-modern .gnext {
     top: 45%;
   }
 }
 @media (min-width: 992px) {
-  .glightbox-clean .gclose {
-    opacity: 0.7;
+  .glightbox-clean .gclose,
+  .glightbox-modern .gclose {
     right: 20px;
   }
 }
@@ -1483,4 +1490,3 @@ iframe.wait-autoplay {
     background: #000;
   }
 }
-/* purgecss end ignore */
