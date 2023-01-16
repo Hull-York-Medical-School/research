@@ -1,0 +1,80 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.content-image > .container {
+  & {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+
+    @include respond-above(md) {
+      gap: 80px;
+    }
+  }
+
+  .image-container,
+  .content-container {
+    flex: 1 1 50%;
+  }
+}
+
+.content-image > .container {
+  .content-container {
+    .heading-2 {
+      margin-bottom: 40px;
+    }
+
+    .description {
+      padding-left: 20px;
+      @include respond-above(sm) {
+        padding-left: 40px;
+      }
+      > .btn {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+.content-image {
+  &.-purple,
+  &.-maroon,
+  &.-dark-grey,
+  &.-dark-blue {
+    color: $white;
+    a {
+      color: $white;
+    }
+  }
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+
+  &.-left > .container {
+    flex-direction: column;
+
+    @include respond-above(md) {
+      flex-direction: row;
+    }
+  }
+  &.-right > .container {
+    flex-direction: column-reverse;
+
+    @include respond-above(md) {
+      flex-direction: row-reverse;
+    }
+  }
+}

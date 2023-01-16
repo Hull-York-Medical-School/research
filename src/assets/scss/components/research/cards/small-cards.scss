@@ -1,0 +1,135 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.small-cards {
+  & {
+  }
+}
+
+.small-cards > .container {
+  & {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+  }
+
+  .card-container > .card {
+    & {
+      min-width: 300px;
+      flex: 1 0 100%;
+
+      @include respond-above(xs) {
+        flex: 1 0 calc(100% / 2 - 23px);
+      }
+      @include respond-above(sm) {
+        flex: 1 0 calc(100% / 3 - 23px);
+      }
+      @include respond-above(md) {
+        flex: 0 0 calc(100% / 3 - 23px);
+      }
+      @include respond-above(lg) {
+        flex: 0 0 calc(100% / 4 - 23px);
+      }
+    }
+
+    &:hover {
+      a > .info {
+        > .content {
+          height: 120px;
+        }
+        > span {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      text-decoration: none;
+
+      > .image-container {
+        align-self: flex-end;
+        margin-bottom: 80px;
+        height: 275px;
+        order: -1;
+        overflow: hidden;
+        width: calc(100% - 30px);
+
+        transition: all 300ms ease-in-out;
+
+        img {
+          display: unset;
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      > .info {
+        & {
+          background: $white;
+          bottom: 0;
+          color: $darkblue;
+          padding: 20px;
+          position: absolute;
+          width: calc(100% - 30px);
+        }
+        > h3,
+        > .heading-4 {
+          font-weight: 600;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+        }
+        > .content {
+          font-weight: 400;
+          height: 0px;
+          max-width: 300px;
+          overflow: hidden;
+          transition: height 300ms ease-in-out;
+        }
+        > span {
+          @include font-size(20);
+          margin: {
+            bottom: 5px;
+            left: 0;
+            top: 10px;
+          }
+          transition: margin-left 300ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.small-cards {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+
+  &.-left > .container {
+    justify-content: flex-start;
+  }
+  &.-right > .container {
+    justify-content: flex-end;
+  }
+}
