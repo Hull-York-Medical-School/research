@@ -1,0 +1,206 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.slider-image-banner {
+  & {
+    align-items: flex-end;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.slider-image-banner > .image-container {
+  & {
+    height: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: -1;
+
+    @include respond-above(sm) {
+      max-height: 600px;
+    }
+  }
+
+  > .overlay {
+    background: {
+      position: -48%;
+      repeat: no-repeat;
+      size: 51% 200%;
+    }
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 185%;
+    z-index: 1;
+
+    @include respond-above(sm) {
+      width: 185%;
+    }
+
+    @include respond-above(md) {
+      width: 110%;
+    }
+
+    @include respond-above(lg) {
+      width: 100%;
+    }
+  }
+
+  img,
+  video {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.slider-image-banner > .container {
+  & {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+
+    @include respond-above(sm) {
+      flex-direction: row;
+      gap: 60px;
+      padding-top: 0;
+    }
+  }
+  .content-container {
+    flex: 1 1 calc(100% / 3 * 1);
+    max-width: 1400px;
+    // width: 100%;
+    padding-top: 50px;
+
+    .component-title {
+      margin-bottom: 20px;
+    }
+
+    .description > .btn {
+      margin-top: 15px;
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+}
+
+.slider-image-banner > .container > .swiper {
+  flex: 1 1 calc(100% / 3 * 2);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 50px;
+  width: 100%;
+
+  @include respond-above(sm) {
+    margin-top: -100px;
+  }
+
+  .swiper-wrapper > .card {
+    & {
+      display: flex;
+      flex-direction: column;
+      height: 380px;
+      position: relative;
+      text-decoration: none;
+
+      @include respond-above(sm) {
+        height: 480px;
+      }
+
+      @include respond-above(md) {
+        height: 100%;
+        max-height: 600px;
+      }
+    }
+
+    > .image-container {
+      align-self: flex-end;
+      margin-bottom: 80px;
+      height: 300px;
+      order: -1;
+      overflow: hidden;
+      width: calc(100% - 30px);
+
+      transition: all 300ms ease-in-out;
+
+      @include respond-above(sm) {
+        height: 400px;
+      }
+
+      @include respond-above(md) {
+        height: 100%;
+      }
+
+      img {
+        display: unset;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    > .info {
+      & {
+        align-items: flex-end;
+        background: $white;
+        bottom: 0;
+        color: $darkblue;
+        display: flex;
+        flex-shrink: 0;
+        gap: 20px;
+        padding: 20px;
+        position: absolute;
+        width: calc(100% - 30px);
+      }
+      > h3,
+      > .heading-4 {
+        font-weight: 600;
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+      > span {
+        @include font-size(20);
+        margin-bottom: 5px;
+        margin-left: 0;
+        transition: margin-left 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.slider-image-banner {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+
+  &.-left > .container {
+    justify-content: flex-start;
+  }
+  &.-right > .container {
+    justify-content: flex-end;
+  }
+}

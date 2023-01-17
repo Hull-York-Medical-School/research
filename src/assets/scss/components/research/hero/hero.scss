@@ -4,7 +4,6 @@
 
 .hero-container {
   & {
-    align-items: flex-end;
     background: $white;
     display: flex;
     min-height: 625px;
@@ -13,6 +12,7 @@
     z-index: 0;
 
     @include respond-above(sm) {
+      align-items: flex-end;
       min-height: 75vh;
       min-height: 75dvh;
     }
@@ -38,12 +38,23 @@
     margin: {
       right: 0;
     }
+    padding: 25px;
     max-width: 510px;
-    padding: 40px;
     z-index: 0;
+
+    @include respond-above(sm) {
+      padding: 40px;
+    }
   }
 
-  .content-container > .heading-1 {
+  .content-container > .title {
+    @include font-size(35);
+    font-weight: 400;
+    line-height: 1.2;
+
+    @include respond-above(sm) {
+      @include font-size(55);
+    }
     margin-bottom: 25px;
     max-width: 830px;
   }
@@ -111,7 +122,7 @@
     background: $maroon;
   }
   &.-grey {
-    background: $lightgrey;
+    background: $researchgrey;
   }
   &.-dark-grey {
     background: $darkgrey;
