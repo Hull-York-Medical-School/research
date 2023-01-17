@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#CE0037" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>
+    Research
+  </title>
+
+  <meta name="description" content="Research components" />
+  <meta name="Keywords" content="Research, components" />
+
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-96x96.png" sizes="62x62" type="image/png" />
+  <link rel="icon" href="https://www.hyms.ac.uk/site-elements/img/favicon/favicon-180x180.png" sizes="180x180" type="image/png" />
+
+  <link rel="preconnect" href="//cloud.typography.com/" crossorigin="anonymous" />
+  <link rel="preconnect" href="//use.fontawesome.com/" crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6201216/6221192/css/fonts.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" />
+
+  <link href="./assets/css/common.css" rel="stylesheet" type="text/css" /> 
+
+    
+    
+  <link href="/assets/css/swiper.css" rel="stylesheet" type="text/css" />
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/hero/hero.min.css" type="text/css" />
+
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/user-featured/quote.min.css" type="text/css"/>
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/user-featured/partners.min.css" type="text/css"/>
+
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/cards/standard-cards.min.css" type="text/css" />
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/cards/cards-image-banner.min.css" type="text/css" />
+
+  
+  
+  <link rel="stylesheet" href="assets/css/components/research/media/content-image.min.css" type="text/css" />
+
+
+  
+  <link rel="stylesheet" href="assets/css/components/research/carousels/slider-image-banner.min.css" type="text/css" />
+
+
+  
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body>
+    <header class="header child" x-data="menu()">
+  <template @load.window="screenSize = window.innerWidth;"></template>
+  <template @resize.window="screenSize = window.innerWidth;"></template>
+  <template x-on:open-menu.window="isMenuOpen = $event.detail.isMenuOpen; freeze();"></template>
+  <template x-on:open-search.window="isSearchOpen = $event.detail.isSearchOpen; freeze();"></template>
+
+  <div class="_container">
+
+    <div class="logo">
+      <a href="/"> 
+        <img alt="Welcome to the Hull York Medical School website" src="https://www.hyms.ac.uk/site-elements/img/logo/hyms-logo.svg" /> 
+      </a>
+    </div>
+
+    <nav aria-label="Main">
+
+  <template x-if="screenSize > 992">
+    <ul>
+      <li>
+        <a title="About" href="/about">About</a>
+      </li>
+      <li>
+        <a title="Courses" href="/courses">Courses</a>
+      </li>
+      <li>
+        <a title="Research" href="/research">Research</a>
+      </li>
+      <li>
+        <a title="Work with us" href="/work-with-us">Work with us</a>
+      </li>
+      <li>
+        <a title="Contact" href="/contact">Contact</a>
+      </li>
+      <li class="search">
+        <button 
+          aria-label="Site search"
+          @click="!isSearchOpen, isMenuOpen = false, $dispatch('open-search',{isSearchOpen: !isSearchOpen}), $dispatch('open-menu',{isMenuOpen: false})"
+        > 
+          <i class="fa fa-search" aria-hidden="true">&nbsp;</i> 
+        </button>
+      </li>
+    </ul>
+  </template>
+
+  <template x-if="screenSize <= 992">
+    <ul>
+      <li class="search">
+        <button 
+          aria-label="Site search"
+          @click="!isSearchOpen, isMenuOpen = false, $dispatch('open-search',{isSearchOpen: !isSearchOpen}), $dispatch('open-menu',{isMenuOpen: false})"
+        > 
+          <i class="fa fa-search" aria-hidden="true">&nbsp;</i> 
+        </button>
+      </li>
+        <li class="menu">
+          <button 
+            aria-label="Main menu"
+            @click.prevent="!isMenuOpen, searchOpen = false, $dispatch('open-menu',{isMenuOpen: !isMenuOpen}), $dispatch('open-search',{isSearchOpen: false})"
+          >
+            Menu <i class="fa fa-bars" aria-hidden="true">&nbsp;</i> 
+          </button>
+        </li>
+
+    </ul>
+  </template>
+</nav>
+
+  </div>
+</header>
+
+
+<section class="main-menu float" x-data="menu()" :class="{ 'active': isMenuOpen || isSearchOpen }">
+  <template @load.window="screenSize = window.innerWidth;"></template>
+  <template @resize.window="screenSize = window.innerWidth;"></template>
+  <template x-on:open-menu.window="isMenuOpen = $event.detail.isMenuOpen; freeze();"></template>
+  <template x-on:open-search.window="isSearchOpen = $event.detail.isSearchOpen; freeze();"></template>
+
+  <template x-if="screenSize > 992 && isSearchOpen === true"> 
+    <div class="container">
+      <div class="main-search" :class="{ 'active': isSearchOpen }">
+        <div class="sys_theme-simple sys_searchcontrolstandard-themed">
+            <div class="sys_search-query-control">
+                <label for="SearchQueryControl_SearchTextBox" class="sys_search-label">Search</label>
+                <input name="ctl00$ctl00$PageContent$SearchQueryControl_SearchTextBox" type="text" value="Enter Keywords" id="SearchQueryControl_SearchTextBox" class="sys_searchbox" placeholder="Search Website">
+                <input type="submit" name="ctl00$ctl00$PageContent$SearchQueryControl_SearchButton" value="Search" id="SearchQueryControl_SearchButton" title="Search" class="sys_button sys_searchbutton sys_search-button">
+            </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template x-if="screenSize <= 992">
+    <div class="container">
+
+      <template x-if="screenSize <= 992 && isSearchOpen === true">
+        <div class="main-search" :class="{ 'active': isSearchOpen }">
+          <div class="sys_theme-simple sys_searchcontrolstandard-themed">
+              <div class="sys_search-query-control">
+                  <label for="SearchQueryControl_SearchTextBox" class="sys_search-label">Search</label>
+                  <input name="ctl00$ctl00$PageContent$SearchQueryControl_SearchTextBox" type="text" value="Enter Keywords" id="SearchQueryControl_SearchTextBox" class="sys_searchbox" placeholder="Search Website">
+                  <input type="submit" name="ctl00$ctl00$PageContent$SearchQueryControl_SearchButton" value="Search" id="SearchQueryControl_SearchButton" title="Search" class="sys_button sys_searchbutton sys_search-button">
+              </div>
+          </div>
+        </div>
+      </template>
+
+      <template x-if="screenSize <= 992 && isMenuOpen === true">
+        <ul class="sub-menu" :class="{ 'active': isMenuOpen }">
+          <li class="desktop-only">
+              <a title="About" href="/about/">About</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Courses" href="/courses/">Courses</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Research" href="/research/">Research</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Work with us" href="/work-with-us/">Work with us</a>
+          </li>
+          <li class="desktop-only">
+              <a title="Contact" href="/contact/">Contact</a>
+          </li>
+        </ul>
+      </template>
+    </div>
+  </template>
+</section>
+
+
+  
+
+    <main>
+      <!-- You write code for this content block in another file -->
+      
+  
+  
+
+  <header class="hero-container -grey">
+
+    <div class="image-container">
+      <div class="overlay"></div>
+      <picture>
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800" type="image/webp">
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800">
+        <source data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440" type="image/webp">
+        <img class="lazy" src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=8&amp;h=8" data-src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440&amp;h=900" alt="Siemens">
+      </picture>
+    </div>
+
+
+    <div class="container">
+      <div class="content-container">
+
+        <h1 class="title">RESEARCH THAT TRANSFORMS LIVES</h1> 
+
+        
+        <div class="description"> 
+          Our world-leading experts are advancing improvements in healthcare – diagnosis, treatment and care – and improving the health of people in our region and globally.
+        </div>
+        
+      
+      </div>
+      <div class="image-caption">
+        <p>Researchers in the lab at York University</p>
+        <span class="fa-solid fa-info"></span>
+      </div>
+    </div>
+
+  </header>
+
+
+
+  
+
+  <section class="content-image -grey -left">
+    <div class="container">
+
+      <div class="content-container">
+
+        <h2 class="component-title">How we’re doing it</h2>
+
+        
+        <div class="description">
+          <p>We believe ground-breaking discoveries can only happen in a collaborative and inclusive research environment.</p><p>Our unique partnership with the University of Hull and the University of York, brings together world leading experts across a range of disciplines, and offers a great environment in which to conduct research which has discovery and innovation at its heart.</p>
+
+          <a href="#" class="btn -secondary">DISCOVER MORE ABOUT OUR RESEARCH ENVIRONMENT</a>
+        </div>
+        
+      
+      </div>
+
+      <div class="image-container">
+        <picture>
+          <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800" type="image/webp">
+          <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800">
+          <source data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440" type="image/webp">
+          <img class="lazy" src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=8&amp;h=8" data-src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440&amp;h=900" alt="Siemens">
+        </picture>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  
+
+  <section class="content-image -grey -left">
+    <div class="container">
+
+      <div class="content-container">
+
+        <h2 class="component-title">How we’re doing it</h2>
+
+        
+        <div class="description">
+          <p>We believe ground-breaking discoveries can only happen in a collaborative and inclusive research environment.</p><p>Our unique partnership with the University of Hull and the University of York, brings together world leading experts across a range of disciplines, and offers a great environment in which to conduct research which has discovery and innovation at its heart.</p>
+
+          <a href="#" class="btn -secondary">DISCOVER MORE ABOUT OUR RESEARCH ENVIRONMENT</a>
+        </div>
+        
+      
+      </div>
+
+      <div class="image-container">
+        <picture>
+          <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800" type="image/webp">
+          <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800">
+          <source data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440" type="image/webp">
+          <img class="lazy" src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=8&amp;h=8" data-src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440&amp;h=900" alt="Siemens">
+        </picture>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  
+  
+    <section class="quote">
+      <div class="container">
+          <blockquote class="quote heading-2 -dark-blue">
+            &quot;OUR AIM IS TO ADVANCE HEALTHCARE THROUGH OUR RESEARCH AND THE IMPACT OF OUR TEACHING.&quot; 
+
+            <div class="person">
+              <p>Professor Una Macleod</p>
+              <p>Dean of Hull York Medical School</p>
+            </div>
+          </blockquote>
+      </div>
+    </section>
+  
+
+
+   
+
+  <section class="slider-image-banner -grey "> 
+
+    <div class="image-container">
+      
+        <div class="overlay" style="background-image: url(https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Dots.svg);"></div>
+      
+      <picture>
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800" type="image/webp">
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800">
+        <source data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440" type="image/webp">
+        <img class="lazy" src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=8&amp;h=8" data-src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440&amp;h=900" alt="Siemens">
+      </picture>
+    </div>
+
+
+    <div class="container"> 
+      <div class="content-container">
+        <h2 class="component-title">How we are making a difference</h2>
+        <div class="description">
+          <p>Explore how our pioneering research is making a real and lasting difference to people’s lives.</p>
+
+          <a href="#" class="btn -secondary">DISCOVER MORE ABOUT OUR RESEARCH ENVIRONMENT</a>
+        </div>
+
+        <div class="controls">
+          <button type="button" class="research-prev -prev">
+            <span class="fa-solid fa-angle-left"></span>
+          </button>
+          <button type="button" class="research-next -next">
+            <span class="fa-solid fa-angle-right"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="swiper research-one">
+        <div class="swiper-wrapper">
+          
+            <a href="#" title="SCIENTISTS Discover MICROPLASTICS IN DEEPEST SECTION OF THE LUNGS" class="card swiper-slide">
+              <div class="info">
+                <h3 class="heading-6">SCIENTISTS Discover MICROPLASTICS IN DEEPEST SECTION OF THE LUNGS</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          
+            <a href="#" title="BLOOD test COULD SHORTEN HOSPITAL STAYS FOR CHILDREN WITH CANCER" class="card swiper-slide">
+              <div class="info">
+                <h3 class="heading-6">BLOOD test COULD SHORTEN HOSPITAL STAYS FOR CHILDREN WITH CANCER</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          
+            <a href="#" title="Item #3" class="card swiper-slide">
+              <div class="info">
+                <h3 class="heading-6">Item #3</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          
+            <a href="#" title="item #4" class="card swiper-slide">
+              <div class="info">
+                <h3 class="heading-6">item #4</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  
+  
+    <section class="partners">
+      <div class="container">
+        <h2 class="component-title">
+          Our partners
+        </h2>
+        <div class="partners">
+          
+            <figure class="logo">
+              <img src="https://mma.prnewswire.com/media/3924/Smith_Nephew_Logo.jpg" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://1000logos.net/wp-content/uploads/2021/03/Reckitt-logo.png" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://static.tildacdn.com/tild6432-3164-4462-b236-646562396234/PG__RGB.png" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://www.northcheshirechamber.co.uk/wp-content/uploads/2018/03/astrazeneca__logo.png" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://logonoid.com/images/msd-logo.png" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://i0.wp.com/doctorpreneurs.com/wp-content/uploads/2019/03/nhs-england-1.jpg" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://www.nhsjobs.com/pub/employer_logos/164.png" alt="Logo">
+            </figure>
+          
+            <figure class="logo">
+              <img src="https://assets.change.org/photos/4/fz/ix/PTFziXvDIhrJNxa-800x450-noPad.jpg" alt="Logo">
+            </figure>
+          
+        </div>
+      </div>
+    </section>
+  
+
+
+   
+
+  <section class="cards-image-banner -grey "> 
+
+    <div class="image-container">
+      
+        <div class="overlay" style="background-image: url(https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Lines.svg);"></div>
+      
+      <picture>
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800" type="image/webp">
+        <source media="(max-width: 578px)" data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=800">
+        <source data-srcset="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=webp&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440" type="image/webp">
+        <img class="lazy" src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=8&amp;h=8" data-src="https://images.unsplash.com/photo-1618218630053-07b524185bbf?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&amp;ixlib=rb-1.2.1&amp;q=85&amp;w=1440&amp;h=900" alt="Siemens">
+      </picture>
+    </div>
+
+
+    <div class="container">
+      <div class="content-container">
+
+        <h2 class="component-title">Related research groups and centres</h2>
+        
+
+        <div class="card-container">
+          
+            <div class="card">
+              <a href="#" title="Academy of Primary Care">
+                <div class="info">
+                  <h3 class="heading-5">Academy of Primary Care</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+          
+            <div class="card">
+              <a href="#" title="Cancer Awareness, Screening and Diagnostic Pathways Research Group">
+                <div class="info">
+                  <h3 class="heading-5">Cancer Awareness, Screening and Diagnostic Pathways Research Group</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+          
+            <div class="card">
+              <a href="#" title="Centre for Health and Population Sciences">
+                <div class="info">
+                  <h3 class="heading-5">Centre for Health and Population Sciences</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+          
+            <div class="card">
+              <a href="#" title="Centre for Atherothrombosis and Metabolic Disease">
+                <div class="info">
+                  <h3 class="heading-5">Centre for Atherothrombosis and Metabolic Disease</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+          
+            <div class="card">
+              <a href="#" title="Mental Health and Addiction Research Group">
+                <div class="info">
+                  <h3 class="heading-5">Mental Health and Addiction Research Group</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+          
+            <div class="card">
+              <a href="#" title="Wolfson Palliative Care Research Centre">
+                <div class="info">
+                  <h3 class="heading-5">Wolfson Palliative Care Research Centre</h3>
+                  <span class="fa-solid fa-arrow-right-long"></span>
+                </div>
+                <div class="image-container">
+                  <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+                </div>
+              </a>
+            </div> 
+           
+        </div>
+      
+      </div>
+    </div>
+
+  </section>
+
+
+
+   
+
+  <section class="regular-cards -grey "> 
+    <div class="container">
+
+      <h2 class="component-title">You may also be interested in:</h2>
+      
+      <div class="card-container">
+        
+          <div class="card">
+            <a href="#" title="Collaborate &lt;br /&gt; with us">
+              <div class="info">
+                <h3 class="heading-4">Collaborate <br /> with us</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container"> 
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          </div> 
+        
+          <div class="card">
+            <a href="#" title="POSTGRADUATE &lt;br /&gt; RESEARCH">
+              <div class="info">
+                <h3 class="heading-4">POSTGRADUATE <br /> RESEARCH</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container"> 
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          </div> 
+        
+          <div class="card">
+            <a href="#" title="FIND A RESEARCH &lt;br /&gt; GROUP OR CENTRE">
+              <div class="info">
+                <h3 class="heading-4">FIND A RESEARCH <br /> GROUP OR CENTRE</h3> 
+                <span class="fa-solid fa-arrow-right-long"></span>
+              </div>
+              <div class="image-container"> 
+                <img src="https://images.unsplash.com/photo-1618218630053-07b524185bbf" alt="alt text" /> 
+              </div>
+            </a>
+          </div> 
+         
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+    </main>
+
+    <footer>
+  <div class="container">
+
+    <div class="menus -internal">
+      <div class="students">
+        <ul role="list">
+          <li>
+            <a target="_blank" rel="nofollow noopener" class="" href="https://howto.hyms.ac.uk">ICT 'HowTo' <i class="fas fa-external-link-alt">&nbsp;</i></a>
+            </li>
+          <li>
+            <a target="_blank" rel="nofollow noopener" class="" href="http://blackboard.hyms.ac.uk">BlackBoard <i class="fas fa-external-link-alt">&nbsp;</i></a>
+            </li>
+          <li>
+            <a title="Support for students" class="" href="/staff-and-students/student-support">Student support</a>
+            </li>
+          <li>
+            <a title="Regulations, policies and codes of practice" class="" href="/staff-and-students/regulations-policies-and-codes-of-practice">Regulations, policies and codes of practice</a>
+            </li>
+          <li>
+            <a title="Research support" class="" href="/staff-and-students/research-support">Research support</a>
+            </li>
+        </ul>
+      </div>
+
+      <div class="general">
+        <ul role="list">
+          <li>
+            <a title="Contact us" class="" href="/about/contact-us">Contact us</a>
+          </li>
+          <li>
+            <a title="How to find us" class="" href="/about/how-to-find-us">How to find us</a>
+          </li>
+          <li>
+            <a title="Current jobs" class="" href="/work-with-us/jobs">Jobs</a>
+          </li>
+          <li>
+            <a title="Legal" class="" href="/legal">Legal</a>
+          </li>
+          <li>
+            <a title="Privacy" class="" href="/legal/privacy">Privacy</a>
+          </li>
+          <li>
+            <a title="Accessibility statement" class="" href="/legal/accessibility-statement">Accessibility</a>
+          </li>
+          <li>
+            <a title="Cookies" class="" href="/legal/cookies">Cookies</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="menus -external">
+      <div class="logos">
+
+        <div>
+          <a title="University of Hull" href="http://www.hull.ac.uk" target="_blank" rel="nofollow noopener"> 
+            <img alt="University of Hull" loading="lazy" src="https://www.hyms.ac.uk/site-elements/img/layout/footer/uni-of-hull.svg" /> 
+          </a>
+        </div>
+        <div>
+          <a title="University of York" href="http://www.york.ac.uk" target="_blank" rel="nofollow noopener"> 
+            <img alt="University of York" loading="lazy" src="https://www.hyms.ac.uk/site-elements/img/layout/footer/uni-of-york.svg" /> 
+          </a>
+        </div>
+        <div>
+          <a title="athena-swan" href="/index.html" target="_blank" rel="nofollow noopener"> 
+            <img alt="Athena Swan Silver Award" loading="lazy" src="https://www.hyms.ac.uk/site-elements/img/layout/footer/athena-swan-silver.svg" />
+          </a>
+        </div>
+
+      </div>
+
+      <div class="social">
+
+        <ul>
+          <li>
+            <a title="Follow us on Twitter" href="https://twitter.com/HullYorkMed" target="_blank" rel="nofollow noopener"><i class="fab fa-twitter" aria-hidden="true">&nbsp;</i></a>
+          </li>
+          <li>
+            <a title="Watch us on YouTube" href="https://www.youtube.com/channel/UCLHEceCTV0y4rm5GUhPTc_g" target="_blank" rel="nofollow noopener"><i class="fab fa-youtube" aria-hidden="true">&nbsp;</i></a>
+          </li>
+          <li>
+            <a title="Follow us on LinkedIn" href="https://www.linkedin.com/company/hull-york-medical-school" target="_blank" rel="nofollow noopener"><i class="fab fa-linkedin-in" aria-hidden="true">&nbsp;</i></a>
+          </li>
+          <li>
+            <a title="Follow us on Facebook" href="https://www.facebook.com/HullYorkMedicalSchool" target="_blank" rel="nofollow noopener"><i class="fab fa-facebook-f" aria-hidden="true">&nbsp;</i></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+    <script src="/assets/js/site.js"></script>
+    <script src="/assets/js/common.js"></script>
+
+    
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  
+  
+  <script src="assets/js/research-carousel.js"></script>
+
+
+  </body>
+</html>
