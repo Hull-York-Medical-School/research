@@ -15,6 +15,30 @@
   width: 100%;
   z-index: -1;
 }
+.full-image-content > .image-container > .overlay {
+  background-repeat: no-repeat;
+  background-size: 51% 200%;
+  height: 100%;
+  opacity: 0.3;
+  position: absolute;
+  width: 185%;
+  z-index: 1;
+}
+@media (min-width: 48em) {
+  .full-image-content > .image-container > .overlay {
+    width: 185%;
+  }
+}
+@media (min-width: 62em) {
+  .full-image-content > .image-container > .overlay {
+    width: 110%;
+  }
+}
+@media (min-width: 75em) {
+  .full-image-content > .image-container > .overlay {
+    width: 100%;
+  }
+}
 .full-image-content > .image-container img,
 .full-image-content > .image-container video {
   height: 100%;
@@ -61,4 +85,10 @@
 }
 .full-image-content.-right > .container {
   justify-content: flex-end;
+}
+.full-image-content.-left > .image-container .overlay {
+  background-position: 150%;
+}
+.full-image-content.-right > .image-container .overlay {
+  background-position: -50%;
 }

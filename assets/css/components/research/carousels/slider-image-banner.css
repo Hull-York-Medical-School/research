@@ -22,11 +22,11 @@
   }
 }
 .slider-image-banner > .image-container > .overlay {
-  background-position: -48%;
+  background-position: -50%;
   background-repeat: no-repeat;
   background-size: 51% 200%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
   position: absolute;
   width: 185%;
   z-index: 1;

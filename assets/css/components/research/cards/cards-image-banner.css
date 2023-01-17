@@ -15,6 +15,31 @@
   width: 100%;
   z-index: -1;
 }
+.cards-image-banner > .image-container > .overlay {
+  background-position: -50%;
+  background-repeat: no-repeat;
+  background-size: 51% 200%;
+  height: 100%;
+  opacity: 0.3;
+  position: absolute;
+  width: 185%;
+  z-index: 1;
+}
+@media (min-width: 48em) {
+  .cards-image-banner > .image-container > .overlay {
+    width: 185%;
+  }
+}
+@media (min-width: 62em) {
+  .cards-image-banner > .image-container > .overlay {
+    width: 110%;
+  }
+}
+@media (min-width: 75em) {
+  .cards-image-banner > .image-container > .overlay {
+    width: 100%;
+  }
+}
 .cards-image-banner > .image-container img,
 .cards-image-banner > .image-container video {
   height: 100%;
@@ -97,10 +122,4 @@
 }
 .cards-image-banner.-dark-blue {
   background: #1a2a39;
-}
-.cards-image-banner.-left > .container {
-  justify-content: flex-start;
-}
-.cards-image-banner.-right > .container {
-  justify-content: flex-end;
 }
