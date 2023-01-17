@@ -30,15 +30,27 @@
 
   > .overlay {
     background: {
-      position: -50%;
+      position: -48%;
       repeat: no-repeat;
-      size: 50% 110%;
+      size: 51% 200%;
     }
     height: 100%;
     opacity: 0.5;
     position: absolute;
-    width: 100%;
+    width: 185%;
     z-index: 1;
+
+    @include respond-above(sm) {
+      width: 185%;
+    }
+
+    @include respond-above(md) {
+      width: 110%;
+    }
+
+    @include respond-above(lg) {
+      width: 100%;
+    }
   }
 
   img,
