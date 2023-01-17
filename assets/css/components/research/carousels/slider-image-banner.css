@@ -22,14 +22,29 @@
   }
 }
 .slider-image-banner > .image-container > .overlay {
-  background-position: -50%;
+  background-position: -48%;
   background-repeat: no-repeat;
-  background-size: 50% 110%;
+  background-size: 51% 200%;
   height: 100%;
   opacity: 0.5;
   position: absolute;
-  width: 100%;
+  width: 185%;
   z-index: 1;
+}
+@media (min-width: 48em) {
+  .slider-image-banner > .image-container > .overlay {
+    width: 185%;
+  }
+}
+@media (min-width: 62em) {
+  .slider-image-banner > .image-container > .overlay {
+    width: 110%;
+  }
+}
+@media (min-width: 75em) {
+  .slider-image-banner > .image-container > .overlay {
+    width: 100%;
+  }
 }
 .slider-image-banner > .image-container img,
 .slider-image-banner > .image-container video {
