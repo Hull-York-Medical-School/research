@@ -23,6 +23,31 @@
     z-index: -1;
   }
 
+  > .overlay {
+    background: {
+      position: -50%;
+      repeat: no-repeat;
+      size: 51% 200%;
+    }
+    height: 100%;
+    opacity: 0.3;
+    position: absolute;
+    width: 185%;
+    z-index: 1;
+
+    @include respond-above(sm) {
+      width: 185%;
+    }
+
+    @include respond-above(md) {
+      width: 110%;
+    }
+
+    @include respond-above(lg) {
+      width: 100%;
+    }
+  }
+
   img,
   video {
     height: 100%;
@@ -118,12 +143,5 @@
   }
   &.-dark-blue {
     background: $darkblue;
-  }
-
-  &.-left > .container {
-    justify-content: flex-start;
-  }
-  &.-right > .container {
-    justify-content: flex-end;
   }
 }
