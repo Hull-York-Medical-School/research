@@ -1,0 +1,51 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Research" %}
+{% set description = "Research components" %}
+{% set keywords = "Research, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/research/hero/hero.njk" as hero %}
+{% import "partials/components/research/featured/intro.njk" as intro %}
+{% import "partials/components/research/cards/small-cards.njk" as smallCards %}
+{% import "partials/components/research/cards/standard-cards.njk" as stdCards %}
+{% import "partials/components/research/media/full-image-content.njk" as fiContent %}
+{% import "partials/components/research/carousels/slider-image-banner.njk" as slider %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="/assets/css/swiper.css" rel="stylesheet" type="text/css" />
+
+  {{ hero.styles() }}
+  {{ intro.styles() }}
+  {{ smallCards.styles() }}
+  {{ stdCards.styles() }}
+  {{ fiContent.styles() }}
+  {{ slider.styles() }}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  {# <script src="assets/js/testimonial-carousel.js"></script> #}
+  {{ slider.scripts() }}
+{% endblock %}
+
+
+{% block content %}
+  
+  {{ hero.value() }}
+  
+  {{ intro.value() }}
+  
+  {{ smallCards.value() }}
+
+  {{ slider.value() }}
+
+  {{ fiContent.value() }}
+
+  {{ stdCards.value() }}
+
+{% endblock %}
