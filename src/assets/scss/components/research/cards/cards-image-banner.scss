@@ -71,8 +71,12 @@
     background: $white;
     margin-top: -200px;
     max-width: 1400px;
-    padding: 60px 80px;
+    padding: 20px;
     width: 100%;
+
+    @include respond-above(sm) {
+      padding: 60px 80px;
+    }
 
     .heading-2 {
       margin-bottom: 40px;
@@ -120,7 +124,7 @@
         > h3,
         > .heading-5 {
           margin-bottom: 0;
-          max-width: 340px;
+          max-width: calc(100% - 50px);
         }
         > span {
           @include font-size(20);
