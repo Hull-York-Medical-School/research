@@ -24,7 +24,7 @@
     z-index: -1;
 
     @include respond-above(sm) {
-      max-height: 700px;
+      max-height: 600px;
     }
   }
 
