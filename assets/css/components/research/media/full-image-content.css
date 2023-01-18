@@ -17,7 +17,7 @@
 }
 @media (min-width: 48em) {
   .full-image-content > .image-container {
-    max-height: 600px;
+    height: calc(100% - 300px);
   }
 }
 .full-image-content > .image-container > .overlay {
