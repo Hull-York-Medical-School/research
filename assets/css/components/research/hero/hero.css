@@ -17,13 +17,13 @@
 .hero-container > .container {
   align-items: flex-end;
   display: flex;
-  justify-content: space-between;
   flex-direction: column-reverse;
   padding-top: 200px;
 }
 @media (min-width: 48em) {
   .hero-container > .container {
     flex-direction: row;
+    justify-content: space-between;
     padding-top: 150px;
   }
 }
