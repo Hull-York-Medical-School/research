@@ -2,18 +2,23 @@
   align-items: flex-end;
   background: #ffffff;
   display: flex;
+  flex-direction: column;
   min-height: 700px;
   position: relative;
   z-index: 0;
 }
 
 .cards-image-banner > .image-container {
-  height: 100%;
-  max-height: 700px;
-  position: absolute;
-  top: 0;
+  min-height: 400px;
+  height: 60vh;
+  position: relative;
   width: 100%;
   z-index: -1;
+}
+@media (min-width: 48em) {
+  .cards-image-banner > .image-container {
+    max-height: 600px;
+  }
 }
 .cards-image-banner > .image-container > .overlay {
   background-position: -50%;
@@ -53,12 +58,13 @@
 .cards-image-banner > .container {
   display: flex;
   justify-content: center;
+  padding-top: 0;
 }
 .cards-image-banner > .container .content-container {
   background: #ffffff;
-  margin-top: 500px;
+  margin-top: -200px;
   max-width: 1400px;
-  padding: 40px;
+  padding: 60px 80px;
   width: 100%;
 }
 .cards-image-banner > .container .content-container .heading-2 {
