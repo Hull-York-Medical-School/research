@@ -64,8 +64,13 @@
   background: #ffffff;
   margin-top: -200px;
   max-width: 1400px;
-  padding: 60px 80px;
+  padding: 20px;
   width: 100%;
+}
+@media (min-width: 48em) {
+  .cards-image-banner > .container .content-container {
+    padding: 60px 80px;
+  }
 }
 .cards-image-banner > .container .content-container .heading-2 {
   margin-bottom: 40px;
@@ -104,7 +109,7 @@
 .cards-image-banner > .container .content-container > .card-container > .card a > .info > h3,
 .cards-image-banner > .container .content-container > .card-container > .card a > .info > .heading-5 {
   margin-bottom: 0;
-  max-width: 340px;
+  max-width: calc(100% - 50px);
 }
 .cards-image-banner > .container .content-container > .card-container > .card a > .info > span {
   font-size: 20px;
