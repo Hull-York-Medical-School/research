@@ -116,6 +116,9 @@
     max-height: 600px;
   }
 }
+.slider-image-banner > .container > .swiper .swiper-wrapper > .card:hover .info > span {
+  margin-left: 10px;
+}
 .slider-image-banner > .container > .swiper .swiper-wrapper > .card > .image-container {
   align-self: flex-end;
   margin-bottom: 80px;
@@ -159,6 +162,7 @@
   font-weight: 600;
   margin-bottom: 0;
   text-transform: uppercase;
+  width: calc(100% - 50px);
 }
 .slider-image-banner > .container > .swiper .swiper-wrapper > .card > .info > span {
   font-size: 20px;
