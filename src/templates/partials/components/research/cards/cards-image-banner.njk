@@ -2,11 +2,17 @@
   Background colours: "-bright-pink", "-pink", "-orange", "-teal", "-blue", "-dark-blue", "-dark-purple"
   Height: "-large", "-small", ""
   Title size: "-large", "-small", ""
+  bgSVG: 
+    ""
+    "https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Circles.svg"
+    "https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Dots.svg"
+    "https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Lines.svg"
  #}
 
 {% set items=[
     {
       "bgColour": "-grey",
+      "bgSVG": "https://www.hyms.ac.uk/assets/developer/images/component-overlays/Radiating-Lines.svg",
       "backgroundImage": "https://images.unsplash.com/photo-1618218630053-07b524185bbf",
       "title": "Related research groups and centres",
       "cards": [
@@ -55,9 +61,12 @@
 
 {% macro value() %} 
 {% for item in items %}
-  <div class="cards-image-banner {{ item.bgColour }} {{ item.position }}"> 
+  <section class="cards-image-banner {{ item.bgColour }} {{ item.position }}"> 
 
     <div class="image-container">
+      {% if item.bgSVG %}
+        <div class="overlay" style="background-image: url({{ item.bgSVG }});"></div>
+      {% endif %}
       <picture>
         <source media="(max-width: 578px)" data-srcset="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=webp&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=800' }}" type="image/webp">
         <source media="(max-width: 578px)" data-srcset="{{ item.backgroundImage + '?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxODQ5MTI1OA&ixlib=rb-1.2.1&q=85&w=800' }}">
@@ -92,6 +101,6 @@
       </div>
     </div>
 
-  </div>
+  </section>
 {% endfor %}
 {% endmacro %}

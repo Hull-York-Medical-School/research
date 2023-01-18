@@ -36,3 +36,7 @@
     background: $darkblue;
   }
 }
+
+.hero-container + .intro > .container {
+  padding: 40px 20px 0;
+}
