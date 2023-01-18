@@ -23,12 +23,12 @@
   & {
     align-items: flex-end;
     display: flex;
-    justify-content: space-between;
     flex-direction: column-reverse;
     padding-top: 200px;
 
     @include respond-above(sm) {
       flex-direction: row;
+      justify-content: space-between;
       padding-top: 150px;
     }
   }
