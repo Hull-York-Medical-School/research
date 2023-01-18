@@ -48,9 +48,9 @@ img {
   }
 }
 
-._visuallyhidden {
+.visuallyhidden {
   @extend %visuallyhidden;
-  &._focusable {
+  &.focusable {
     &:focus {
       @extend %visuallyhiddenfocusable;
     }

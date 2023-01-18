@@ -1,0 +1,134 @@
+@import '../../../abstracts/variables';
+@import '../../../abstracts/mixins';
+@import '../../../abstracts/functions';
+
+.banner-cards > .container {
+  & {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include respond-above(sm) {
+      gap: 80px;
+    }
+  }
+  .card {
+    & {
+      align-items: center;
+      display: flex;
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+    > .image-container {
+      position: absolute;
+      width: calc(100% - 476px / 2);
+      z-index: -1;
+
+      @include respond-below(sm) {
+        align-self: flex-start;
+        height: calc(100% - 30px);
+        width: calc(100% - 30px);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .info {
+      background: $white;
+      max-width: 476px;
+      padding: 30px;
+
+      @include respond-below(sm) {
+        align-self: flex-end;
+      }
+    }
+
+    // a {
+    //   display: flex;
+    //   flex-direction: column;
+    //   position: relative;
+    //   text-decoration: none;
+    //   > .info {
+    //     & {
+    //       background: $white;
+    //       bottom: 0;
+    //       color: $darkblue;
+    //       padding: 20px;
+    //       position: absolute;
+    //       width: calc(100% - 30px);
+    //     }
+    //     > h3,
+    //     > .heading-4 {
+    //       font-weight: 600;
+    //       margin-bottom: 10px;
+    //       text-transform: uppercase;
+    //     }
+    //     > .content {
+    //       font-weight: 400;
+    //       height: 0px;
+    //       max-width: 300px;
+    //       overflow: hidden;
+    //       transition: height 300ms ease-in-out;
+    //     }
+    //     > span {
+    //       @include font-size(20);
+    //       margin: {
+    //         bottom: 5px;
+    //         left: 0;
+    //         top: 10px;
+    //       }
+    //       transition: margin-left 300ms ease-in-out;
+    //     }
+    //   }
+    // }
+  }
+}
+
+.banner-cards {
+  &.-purple {
+    background: $purple;
+  }
+  &.-maroon {
+    background: $maroon;
+  }
+  &.-grey {
+    background: $researchgrey;
+  }
+  &.-dark-grey {
+    background: $darkgrey;
+  }
+  &.-dark-blue {
+    background: $darkblue;
+  }
+}
+
+.banner-cards > .container {
+  .card.-left {
+    justify-content: flex-start;
+    > .image-container {
+      left: auto;
+      right: 0;
+    }
+    .info {
+      @include respond-below(sm) {
+        margin-right: 30px;
+      }
+    }
+  }
+  .card.-right {
+    justify-content: flex-end;
+    > .image-container {
+      left: 0;
+      right: auto;
+    }
+    .info {
+      @include respond-below(sm) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
