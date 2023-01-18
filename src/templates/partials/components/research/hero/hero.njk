@@ -41,10 +41,10 @@
     <div class="container">
       <div class="content-container">
 
-        <h1 class="heading-1">{{ item.title | safe }}</h1>
+        <h1 class="title">{{ item.title | safe }}</h1> 
 
         {% if (item.description) %}
-        <div class="description">
+        <div class="description"> 
           {{ item.description | safe }}
         </div>
         {% endif %}
