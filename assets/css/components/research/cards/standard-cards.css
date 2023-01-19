@@ -58,6 +58,7 @@
   padding: 20px;
   position: absolute;
   width: calc(100% - 30px);
+  z-index: 1;
 }
 .regular-cards > .container .card-container > .card a > .info > h3,
 .regular-cards > .container .card-container > .card a > .info > .heading-4 {
@@ -87,10 +88,4 @@
 }
 .regular-cards.-dark-blue {
   background: #1a2a39;
-}
-.regular-cards.-left > .container {
-  justify-content: flex-start;
-}
-.regular-cards.-right > .container {
-  justify-content: flex-end;
 }
