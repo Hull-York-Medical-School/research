@@ -925,12 +925,11 @@ section.main-menu {
   background: 0 0;
   overflow: hidden;
   height: 0;
-  margin-top: 80px;
+  margin-top: 0;
   z-index: 2;
 }
 @media (min-width: 62em) {
   section.main-menu {
-    margin-top: 120px;
     padding-top: 0;
   }
 }
