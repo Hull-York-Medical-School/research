@@ -6,8 +6,10 @@ module.exports = {
   mode: 'production',
   entry: {
     site: path.resolve(__dirname, 'src/assets/js/site.js'),
-    layout: path.resolve(__dirname, 'src/assets/js/layout.js'),
+    common: path.resolve(__dirname, 'src/assets/js/common.js'),
+    swiper: path.resolve(__dirname, 'src/assets/js/swiper.js'),
     // carousels
+    'research-carousel': path.resolve(__dirname, 'src/assets/js/components/research/research-carousel.js'),
     'testimonial-carousel': path.resolve(__dirname, 'src/assets/js/components/carousels/testimonial-carousel.js'),
     'news-carousel': path.resolve(__dirname, 'src/assets/js/components/carousels/news-and-events-carousel.js'),
     'stories-carousel': path.resolve(__dirname, 'src/assets/js/components/carousels/stories-carousel.js'),

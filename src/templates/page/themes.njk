@@ -1,0 +1,66 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Research" %}
+{% set description = "Research components" %}
+{% set keywords = "Research, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/research/hero/hero.njk" as hero %}
+
+{% import "partials/components/research/user-featured/quote.njk" as quote %}
+{% import "partials/components/research/user-featured/partners.njk" as partner %}
+
+{% import "partials/components/research/cards/standard-cards.njk" as stdCards %}
+{% import "partials/components/research/cards/cards-image-banner.njk" as ciBanner %}
+
+{% import "partials/components/research/media/content-image.njk" as contentImage %}
+
+{% import "partials/components/research/carousels/slider-image-banner.njk" as slider %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="assets/css/swiper.css" rel="stylesheet" type="text/css" />
+
+  {{ hero.styles() }}
+
+  {{ quote.styles() }}
+  {{ partner.styles() }}
+
+  {{ stdCards.styles() }}
+  {{ ciBanner.styles() }}
+  
+  {{ contentImage.styles() }}
+
+  {{ slider.styles() }}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  {# <script src="assets/js/testimonial-carousel.js"></script> #}
+  {{ slider.scripts() }}
+{% endblock %}
+
+
+{% block content %}
+  
+  {{ hero.value() }}
+
+  {{ contentImage.value() }}
+
+  {{ contentImage.value() }}
+
+  {{ quote.value() }}
+
+  {{ slider.value() }}
+
+  {{ partner.value() }}
+
+  {{ ciBanner.value() }}
+
+  {{ stdCards.value() }}
+
+
+{% endblock %}

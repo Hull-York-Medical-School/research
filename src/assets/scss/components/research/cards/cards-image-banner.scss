@@ -7,6 +7,7 @@
     align-items: flex-end;
     background: $white;
     display: flex;
+    flex-direction: column;
     min-height: 700px;
     position: relative;
     z-index: 0;
@@ -15,12 +16,40 @@
 
 .cards-image-banner > .image-container {
   & {
-    height: 100%;
-    max-height: 700px;
-    position: absolute;
-    top: 0;
+    min-height: 400px;
+    height: 60vh;
+    position: relative;
     width: 100%;
     z-index: -1;
+
+    @include respond-above(sm) {
+      max-height: 600px;
+    }
+  }
+
+  > .overlay {
+    background: {
+      position: -50%;
+      repeat: no-repeat;
+      size: 51% 200%;
+    }
+    height: 100%;
+    opacity: 0.3;
+    position: absolute;
+    width: 185%;
+    z-index: 1;
+
+    @include respond-above(sm) {
+      width: 185%;
+    }
+
+    @include respond-above(md) {
+      width: 110%;
+    }
+
+    @include respond-above(lg) {
+      width: 100%;
+    }
   }
 
   img,
@@ -36,13 +65,18 @@
   & {
     display: flex;
     justify-content: center;
+    padding-top: 0;
   }
   .content-container {
     background: $white;
-    margin-top: 500px;
+    margin-top: -200px;
     max-width: 1400px;
-    padding: 40px;
+    padding: 20px;
     width: 100%;
+
+    @include respond-above(sm) {
+      padding: 60px 80px;
+    }
 
     .heading-2 {
       margin-bottom: 40px;
@@ -90,7 +124,7 @@
         > h3,
         > .heading-5 {
           margin-bottom: 0;
-          max-width: 340px;
+          max-width: calc(100% - 50px);
         }
         > span {
           @include font-size(20);
@@ -118,12 +152,5 @@
   }
   &.-dark-blue {
     background: $darkblue;
-  }
-
-  &.-left > .container {
-    justify-content: flex-start;
-  }
-  &.-right > .container {
-    justify-content: flex-end;
   }
 }

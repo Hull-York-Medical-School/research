@@ -4,7 +4,6 @@
 
 .hero-container {
   & {
-    align-items: flex-end;
     background: $white;
     display: flex;
     min-height: 625px;
@@ -13,6 +12,7 @@
     z-index: 0;
 
     @include respond-above(sm) {
+      align-items: flex-end;
       min-height: 75vh;
       min-height: 75dvh;
     }
@@ -23,12 +23,12 @@
   & {
     align-items: flex-end;
     display: flex;
-    justify-content: space-between;
     flex-direction: column-reverse;
     padding-top: 200px;
 
     @include respond-above(sm) {
       flex-direction: row;
+      justify-content: space-between;
       padding-top: 150px;
     }
   }
@@ -38,12 +38,23 @@
     margin: {
       right: 0;
     }
+    padding: 25px;
     max-width: 510px;
-    padding: 40px;
     z-index: 0;
+
+    @include respond-above(sm) {
+      padding: 40px;
+    }
   }
 
-  .content-container > .heading-1 {
+  .content-container > .title {
+    @include font-size(35);
+    font-weight: 400;
+    line-height: 1.2;
+
+    @include respond-above(sm) {
+      @include font-size(55);
+    }
     margin-bottom: 25px;
     max-width: 830px;
   }
