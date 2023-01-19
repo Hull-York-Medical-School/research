@@ -12,12 +12,10 @@ section {
     background: 0 0;
     overflow: hidden;
     height: 0;
-    margin-top: 80px;
-    // padding-top: 20px;
+    margin-top: 0;
     z-index: 2;
 
     @include respond-above(md) {
-      margin-top: 120px;
       padding-top: 0;
     }
 
