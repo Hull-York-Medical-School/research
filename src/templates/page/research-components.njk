@@ -14,6 +14,7 @@
 {% import "partials/components/research/user-featured/quote.njk" as quote %}
 {% import "partials/components/research/user-featured/partners.njk" as partner %}
 
+{% import "partials/components/research/cards/banner-cards.njk" as bannerCards %}
 {% import "partials/components/research/cards/small-cards.njk" as smallCards %}
 {% import "partials/components/research/cards/standard-cards.njk" as stdCards %}
 {% import "partials/components/research/cards/cards-image-banner.njk" as ciBanner %}
@@ -25,13 +26,15 @@
 
 {# Styles and sceripts added here #}
 {% block styles %}
-  {# <link href="/assets/css/carousel-components.css" rel="stylesheet" type="text/css" /> #}
+  <link href="/assets/css/swiper.css" rel="stylesheet" type="text/css" />
+
   {{ hero.styles() }}
   {{ intro.styles() }}
 
   {{ quote.styles() }}
   {{ partner.styles() }}
 
+  {{ bannerCards.styles() }}
   {{ smallCards.styles() }}
   {{ stdCards.styles() }}
   {{ ciBanner.styles() }}
@@ -43,8 +46,9 @@
 {% endblock %}
 
 {% block scripts %}
-  {# <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-  <script src="assets/js/testimonial-carousel.js"></script> #}
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  {# <script src="assets/js/testimonial-carousel.js"></script> #}
+  {{ slider.scripts() }}
 {% endblock %}
 
 
@@ -90,7 +94,7 @@
       {{ title + ': ' }} Banner cards</h2>
   </section>
   
-  {# {{ news.value() }} #}
+  {{ bannerCards.value() }}
 
   <section style="max-width:1200px;margin: 50px auto 0;">
     <h2 class="heading-3">

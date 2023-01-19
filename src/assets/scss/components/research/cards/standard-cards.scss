@@ -75,6 +75,7 @@
           padding: 20px;
           position: absolute;
           width: calc(100% - 30px);
+          z-index: 1;
         }
         > h3,
         > .heading-4 {
@@ -108,12 +109,5 @@
   }
   &.-dark-blue {
     background: $darkblue;
-  }
-
-  &.-left > .container {
-    justify-content: flex-start;
-  }
-  &.-right > .container {
-    justify-content: flex-end;
   }
 }
