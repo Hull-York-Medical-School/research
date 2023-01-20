@@ -1,56 +1,128 @@
 .controls {
   & {
     display: none;
+    gap: 20px;
 
     @include respond-above(sm) {
       align-self: flex-end;
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding-left: 0;
       z-index: 2;
     }
   }
   > .-prev,
   > .-next {
-    border: 2px solid;
-    bottom: 0;
+    align-items: center;
+    border: 4px solid;
     cursor: pointer;
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
-    margin: 0;
-    opacity: 1;
-    top: auto;
-
     height: 50px;
+    justify-content: center;
+    position: relative;
     width: 50px;
+    transition: all 300ms ease-in-out;
 
-    .fa-solid {
-      align-self: center;
+    span {
+      @include font-size(22);
+      z-index: 0;
     }
 
     &.swiper-button-disabled {
       cursor: initial;
       opacity: 0.5;
     }
-  }
-  > .-prev {
-    margin-right: 15px;
-  }
 
-  &.-white {
+    &::before {
+      content: '';
+      width: 0%;
+      height: 0%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: all 300ms ease-in-out;
+    }
+
+    &:hover {
+      &::before {
+        background: $white;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.controls {
+  &.-purple,
+  &.-maroon,
+  &.-dark-grey,
+  &.-dark-blue {
     > .-prev,
     > .-next {
-      border: 2px solid $white;
+      border-color: $white;
       color: $white;
     }
   }
-  &.-pink {
+  &.-grey {
     > .-prev,
     > .-next {
-      border: 2px solid $pink;
-      color: $pink;
+      background: $darkblue;
+      border-color: $darkblue;
+      color: $white;
+
+      &:hover {
+        color: $darkblue;
+      }
+    }
+  }
+  &.-dark-grey {
+    > .-prev,
+    > .-next {
+      background: $darkgrey;
+      &:hover {
+        color: $darkgrey;
+      }
+    }
+  }
+  &.-dark-blue {
+    > .-prev,
+    > .-next {
+      background: $darkblue;
+      &:hover {
+        color: $darkblue;
+      }
+    }
+  }
+  &.-purple {
+    > .-prev,
+    > .-next {
+      background: $purple;
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+  &.-maroon {
+    > .-prev,
+    > .-next {
+      background: $maroon;
+      &:hover {
+        color: $maroon;
+      }
+    }
+  }
+
+  > .-prev,
+  > .-next {
+    background: $darkblue;
+    border-color: $darkblue;
+    color: $white;
+
+    &:hover {
+      color: $darkblue;
     }
   }
 }
