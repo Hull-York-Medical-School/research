@@ -47,6 +47,7 @@
   line-height: 1.2;
   margin-bottom: 25px;
   max-width: 830px;
+  text-transform: uppercase;
 }
 @media (min-width: 48em) {
   .hero-container > .container .content-container > .title {

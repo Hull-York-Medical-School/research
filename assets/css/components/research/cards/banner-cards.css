@@ -43,6 +43,9 @@
     align-self: flex-end;
   }
 }
+.banner-cards > .container .card .info .heading-5 {
+  text-transform: uppercase;
+}
 
 .banner-cards.-purple {
   background: #4b384c;
