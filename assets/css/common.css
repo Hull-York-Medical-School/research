@@ -711,52 +711,118 @@ sup {
 
 .controls {
   display: none;
+  gap: 20px;
 }
 @media (min-width: 48em) {
   .controls {
     align-self: flex-end;
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
     z-index: 2;
   }
 }
 .controls > .-prev,
 .controls > .-next {
-  border: 2px solid;
-  bottom: 0;
+  align-items: center;
+  border: 4px solid;
   cursor: pointer;
   display: flex;
   flex-shrink: 0;
-  justify-content: center;
-  margin: 0;
-  opacity: 1;
-  top: auto;
   height: 50px;
+  justify-content: center;
+  position: relative;
   width: 50px;
+  transition: all 300ms ease-in-out;
 }
-.controls > .-prev .fa-solid,
-.controls > .-next .fa-solid {
-  align-self: center;
+.controls > .-prev span,
+.controls > .-next span {
+  font-size: 22px;
+  font-size: 1.375rem;
+  z-index: 0;
 }
 .controls > .-prev.swiper-button-disabled,
 .controls > .-next.swiper-button-disabled {
   cursor: initial;
   opacity: 0.5;
 }
-.controls > .-prev {
-  margin-right: 15px;
+.controls > .-prev::before,
+.controls > .-next::before {
+  content: "";
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 300ms ease-in-out;
 }
-.controls.-white > .-prev,
-.controls.-white > .-next {
-  border: 2px solid #ffffff;
+.controls > .-prev:hover::before,
+.controls > .-next:hover::before {
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+}
+
+.controls.-purple > .-prev,
+.controls.-purple > .-next, .controls.-maroon > .-prev,
+.controls.-maroon > .-next, .controls.-dark-grey > .-prev,
+.controls.-dark-grey > .-next, .controls.-dark-blue > .-prev,
+.controls.-dark-blue > .-next {
+  border-color: #ffffff;
   color: #ffffff;
 }
-.controls.-pink > .-prev,
-.controls.-pink > .-next {
-  border: 2px solid #ce0037;
-  color: #ce0037;
+.controls.-grey > .-prev,
+.controls.-grey > .-next {
+  background: #1a2a39;
+  border-color: #1a2a39;
+  color: #ffffff;
+}
+.controls.-grey > .-prev:hover,
+.controls.-grey > .-next:hover {
+  color: #1a2a39;
+}
+.controls.-dark-grey > .-prev,
+.controls.-dark-grey > .-next {
+  background: #333f48;
+}
+.controls.-dark-grey > .-prev:hover,
+.controls.-dark-grey > .-next:hover {
+  color: #333f48;
+}
+.controls.-dark-blue > .-prev,
+.controls.-dark-blue > .-next {
+  background: #1a2a39;
+}
+.controls.-dark-blue > .-prev:hover,
+.controls.-dark-blue > .-next:hover {
+  color: #1a2a39;
+}
+.controls.-purple > .-prev,
+.controls.-purple > .-next {
+  background: #4b384c;
+}
+.controls.-purple > .-prev:hover,
+.controls.-purple > .-next:hover {
+  color: #4b384c;
+}
+.controls.-maroon > .-prev,
+.controls.-maroon > .-next {
+  background: #861f41;
+}
+.controls.-maroon > .-prev:hover,
+.controls.-maroon > .-next:hover {
+  color: #861f41;
+}
+.controls > .-prev,
+.controls > .-next {
+  background: #1a2a39;
+  border-color: #1a2a39;
+  color: #ffffff;
+}
+.controls > .-prev:hover,
+.controls > .-next:hover {
+  color: #1a2a39;
 }
 
 .swiper-pagination {
