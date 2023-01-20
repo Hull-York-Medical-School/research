@@ -51,12 +51,13 @@
     @include font-size(35);
     font-weight: 400;
     line-height: 1.2;
+    margin-bottom: 25px;
+    max-width: 830px;
+    text-transform: uppercase;
 
     @include respond-above(sm) {
       @include font-size(55);
     }
-    margin-bottom: 25px;
-    max-width: 830px;
   }
   .content-container > .description {
     @include font-size(20);
