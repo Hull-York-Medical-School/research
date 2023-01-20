@@ -45,46 +45,11 @@
       @include respond-below(sm) {
         align-self: flex-end;
       }
-    }
 
-    // a {
-    //   display: flex;
-    //   flex-direction: column;
-    //   position: relative;
-    //   text-decoration: none;
-    //   > .info {
-    //     & {
-    //       background: $white;
-    //       bottom: 0;
-    //       color: $darkblue;
-    //       padding: 20px;
-    //       position: absolute;
-    //       width: calc(100% - 30px);
-    //     }
-    //     > h3,
-    //     > .heading-4 {
-    //       font-weight: 600;
-    //       margin-bottom: 10px;
-    //       text-transform: uppercase;
-    //     }
-    //     > .content {
-    //       font-weight: 400;
-    //       height: 0px;
-    //       max-width: 300px;
-    //       overflow: hidden;
-    //       transition: height 300ms ease-in-out;
-    //     }
-    //     > span {
-    //       @include font-size(20);
-    //       margin: {
-    //         bottom: 5px;
-    //         left: 0;
-    //         top: 10px;
-    //       }
-    //       transition: margin-left 300ms ease-in-out;
-    //     }
-    //   }
-    // }
+      .heading-5 {
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
