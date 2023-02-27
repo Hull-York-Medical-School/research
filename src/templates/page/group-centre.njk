@@ -1,0 +1,50 @@
+{% extends "layouts/main.njk" %}
+
+{# Page related details #}
+{% set title = "Research" %}
+{% set description = "Research components" %}
+{% set keywords = "Research, components" %}
+{% set page = "child" %}
+{% set pageMenu = "float" %}
+
+{# COMPONENTS #}
+{% import "partials/components/research/hero/hero.njk" as hero %}
+{% import "partials/components/research/cards/small-cards.njk" as smallCards %}
+{% import "partials/components/research/carousels/slider-image-banner.njk" as slider %}
+{% import "partials/components/research/user-featured/partners.njk" as partner %}
+
+{# Styles and sceripts added here #}
+{% block styles %}
+  <link href="assets/css/swiper.css" rel="stylesheet" type="text/css" />
+
+  {{ hero.styles() }}
+  {{ smallCards.styles() }}
+  {{ slider.styles() }}
+  {{ partner.styles() }}
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  {{ slider.scripts() }}
+{% endblock %}
+
+
+{% block content %}
+  
+  {{ hero.value() }}
+
+  <h2>NEW COMPONENT</h2>
+  
+  {{ smallCards.value() }}
+
+  <h2>NEW COMPONENT</h2>
+  <h2>NEW COMPONENT</h2>
+
+  {{ partner.value() }}
+  {{ slider.value() }}
+
+  <h2>NEW COMPONENT</h2>
+
+  <h2>NEW COMPONENT</h2>
+
+{% endblock %}
